@@ -61,59 +61,71 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
     return (
       <div className={styles.container}>
 
-        <div className={styles.banner}>
-          <div className={styles.title}>
-            <h1>{title}</h1>
+        {/* Header */}
+        <div className={styles.header}>
+
+          <div className={`${styles.headerInner} ${styles.innerContainer}`}>
+
+            {/* Navigation */}
+            <div className={styles.headerNavigation}>
+
+              {/* Logo */}
+              <a className={styles.headerNavigationLogo} href="/">
+                john snow
+            </a>
+
+              {/* Nav menu */}
+              <nav className={styles.headerNavigationMenu}>
+                <a href="/">menu1</a>
+                <a href="/">menu2</a>
+                <a href="/">menu3</a>
+              </nav>
+            </div>
+
+            {/* Banner */}
+            <div className={styles.banner}>
+
+              {/* Graphic */}
+              <div className={styles.bannerGraphic}>
+              </div>
+
+              {/* Title */}
+              <div className={styles.bannerTitle}>
+                <h3>
+                  Hello! This is the title.
+              </h3>
+              </div>
+
+              {/* Tagline */}
+              <div className={styles.bannerTagline}>
+                <h5>
+                  This is a slightly smaller piece of text, the tagline. Make me interesting.
+              </h5>
+              </div>
+
+            </div>
           </div>
-          <div className={styles.tagline}>
-            <span>{tagline}</span>
+
+        </div>
+
+        {/* Main content */}
+        <div className={styles.mainContent}>
+          <div className={`${styles.mainContentInner} ${styles.innerContainer}`}>
+
           </div>
         </div>
 
-        <div className={styles.posts}>
-          <ul>
-            {posts.map(({ node }) => {
+        {/* Footer */}
+        <footer className={styles.footer}>
 
-              const slug = node.fields.slug;
-              const title = node.frontmatter.title;
-              const date = node.frontmatter.date;
-              const excerpt = node.excerpt;
+          <div className={`${styles.footerInner} ${styles.innerContainer}`}>
+            <p>Posted by: Hege Refsnes</p>
+            <p>Contact information: <a href="mailto:someone@example.com">
+              someone@example.com</a>.</p>
+          </div>
+          
+        </footer>
 
-              return (
-                <div className={styles.post}>
-
-                  {/* title */}
-                  <div className={styles.postTitle}>
-                    <a href={slug}>
-                      <h2>{title}</h2>
-                    </a>
-                  </div>
-
-                  {/* excerpt */}
-                  <div className={styles.postExcerpt}>
-                    <span>
-                      {excerpt}
-                    </span>
-                  </div>
-
-                  {/* metadata */}
-                  <div className={styles.postMetadata}>
-                    <span className={styles.postDate}>
-                      {date}
-                    </span>
-                  </div>
-
-                  {/* separator */}
-                  <div className={styles.separator} />
-                </div>
-              )
-            })}
-          </ul>
-        </div>
-
-        <div className={styles.footer}>
-          <span>Copyright 2018</span>
-        </div>
       </div>
     )
   }

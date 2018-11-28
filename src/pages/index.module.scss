@@ -1,114 +1,208 @@
+// Removing defaults we don't need
 * {
-  margin: 0px;
-}
-
-a { 
-  color: inherit; 
-  text-decoration: none;
-} 
-
-body {
-  font-family: "Raleway", sans-serif;
-  font-size: 1em;
-  color: #666666;
+    margin: 0px;
 }
 
 a {
-  color: #333333;
+    color: inherit;
+    text-decoration: none;
 }
 
-a:hover {
-  color: #87d8ea;
-}
+// Fonts
+// body {
+//     font-family: "Raleway", sans-serif;
+//     font-size: 1em;
+//     color: #666666;
+// }
 
-h1,
-h2, 
-h3,
-h4, 
-h5, 
-h6 {
-  font-weight: normal;
-}
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//     font-weight: normal;
+// }
 
-span {
-  display: inline-block;
-  vertical-align: middle;
-}
+// Links
+// a {
+//     color: #333333;
+// }
 
-.separator {
-  height: 1px;
-  width: 40%;
-  background-color: #eff2f7;
-}
+// a:hover {
+//     color: #87d8ea;
+// }
 
+// Generic
+// span {
+//     display: inline-block;
+//     vertical-align: middle;
+// }
+
+// .separator {
+//     height: 1px;
+//     width: 40%;
+//     background-color: #eff2f7;
+// }
+
+// Containers
 .container {
     width: 100%;
-    
-    h1 {
-      color: white;
-    }
-    
-    p {
-      color: white;
-    }
-  }
+    background-color: #333333;
+}
+
+.innerContainer {
+  max-width: 1040px;
+  display: block;
+  height: inherit;
+  margin: 0 auto;
+}
+
+// Header
+.header {
+  background-color: aliceblue;
+}
+
+.headerInner {
+}
+
+.headerNavigation {
+  background-color: red;
+  overflow: hidden;
+  padding-top: 15px;
+}
+
+a.headerNavigationLogo {
+  background-color: aquamarine;
+  display: block;
+  float: left;
+  padding: 10px;
+}
+
+a.headerNavigationLogo:hover {
+  background-color:black;
+  color: white;
+}
+
+
+.headerNavigationMenu {
+  background-color: bisque;
+  display: block;
+  float: right;
+}
+
+nav a {
+  background-color: cadetblue;
+  margin-left: 10px;
+  padding: 10px;
+  float: right;
+}
+
+nav a:hover {
+  background-color:black;
+  color: white;
+}
 
 .banner {
-  background-color: #87d8ea;
-  min-height: 180px;
-  display: block;
-  padding: 75px 15%;
+  background-color: pink;
   text-align: center;
-  color: white;
+  padding: 75px 0;
 }
 
-.title {
-  margin-bottom: 20px;
+.bannerGraphic {
+  background-color: blueviolet;
+  height: 150px;
 }
 
-.tagline {
-  margin-bottom: 50px;
+.bannerTitle {
+  margin-top: 15px;
 }
 
-.posts {
-  max-width: 800px;
-  margin: 0px auto;
+.bannerTagline {
+  margin: 20px 50px;
 }
 
-.post {
-  display: block;
-  margin-top: 10px;
-  padding: 15px;
+
+// Main content
+.mainContent {
 }
 
-.postTitle {
-  padding-bottom: 10px;
-  display: block;
+.mainContentInner {
+  min-height: 400px;
+  background-color: chocolate;
 }
 
-.postExcerpt {
-  padding-bottom: 10px;
-}
-
-.postMetadata {
-  font-size: 0.8em;
-  color: rgb(178, 186, 189);
-  margin-bottom: 15px;
-}
-
-.postDate {
-  padding-right: 10px;
-}
-
-.postTags {
-  padding: 0 10px;
-}
-
+// Footer
 .footer {
-  padding-top: 15px;
-  margin-top: 20px;
-  background-color: #87d8ea;
-  height: 65px;
-  text-align: center;
-  color: white;
+  background-color:darkgreen;
+  display: block;
 }
+
+.footerInner {
+}
+
+
+// .banner {
+//     min-height: 400px;
+//     display: block;
+//     padding: 100px 15%;
+//     text-align: center;
+//     color: white;
+// }
+
+// .bannerGraphics {
+//     background-color: #333333;
+//     display: block;
+//     height: 100px;
+// }
+
+// .title {
+//     margin-bottom: 20px;
+// }
+
+// .tagline {
+//     margin-bottom: 50px;
+// }
+
+// .posts {
+//     max-width: 800px;
+//     margin: 0px auto;
+// }
+
+// .post {
+//     display: block;
+//     margin-top: 10px;
+//     padding: 15px;
+// }
+
+// .postTitle {
+//     padding-bottom: 10px;
+//     display: block;
+// }
+
+// .postExcerpt {
+//     padding-bottom: 10px;
+// }
+
+// .postMetadata {
+//     font-size: 0.8em;
+//     color: rgb(178, 186, 189);
+//     margin-bottom: 15px;
+// }
+
+// .postDate {
+//     padding-right: 10px;
+// }
+
+// .postTags {
+//     padding: 0 10px;
+// }
+
+// .footer {
+//     padding-top: 15px;
+//     margin-top: 20px;
+//     background-color: #87d8ea;
+//     height: 65px;
+//     text-align: center;
+//     color: white;
+// }
