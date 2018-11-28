@@ -72,7 +72,7 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
               {/* Logo */}
               <a className={styles.headerNavigationLogo} href="/">
                 john snow
-            </a>
+              </a>
 
               {/* Nav menu */}
               <nav className={styles.headerNavigationMenu}>
@@ -119,9 +119,16 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
         <footer className={styles.footer}>
 
           <div className={`${styles.footerInner} ${styles.innerContainer}`}>
-            <p>Posted by: Hege Refsnes</p>
-            <p>Contact information: <a href="mailto:someone@example.com">
-              someone@example.com</a>.</p>
+
+            <div className={styles.footerCopyright}>
+              Copyright 2018
+            </div>
+
+            <div className={styles.footerLinks}>
+              <a href="/">footerMenu1</a>
+              <a href="/">footerMenu2</a>
+            </div>
+
           </div>
           
         </footer>

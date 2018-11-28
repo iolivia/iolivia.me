@@ -84,7 +84,6 @@ a.headerNavigationLogo:hover {
   color: white;
 }
 
-
 .headerNavigationMenu {
   background-color: bisque;
   display: block;
@@ -139,6 +138,28 @@ nav a:hover {
 }
 
 .footerInner {
+  overflow: hidden;
+  padding: 10px;
+}
+
+.footerCopyright {
+  display: block;
+  float: left;
+  padding: 10px;
+}
+
+.footerLinks {
+  display: block;
+  float: right;
+  padding: 10px;
+
+  a {
+    padding: 10px;
+  }
+
+  a:hover {
+    color: white;
+  }
 }
 
 
