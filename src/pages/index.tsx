@@ -112,6 +112,36 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
         <div className={styles.mainContent}>
           <div className={`${styles.mainContentInner} ${styles.innerContainer}`}>
 
+            <div className={styles.postList}>
+
+              <ul>
+
+                {Array.from(Array(10).keys()).map((x, i) =>
+
+                <li key={i}>
+
+                  <a className={styles.post} href="/">
+
+                    <img src="https://via.placeholder.com/320x200" />
+
+                    <h3>
+                      This is the title
+                    </h3>
+
+                    <p>
+                      This is an excerpt of the post you are about to read. You just need to click it to read the whole thing.
+                    </p>
+                  </a>
+
+                </li>
+                )}
+
+
+              </ul>
+
+            </div>
+
+
           </div>
         </div>
 

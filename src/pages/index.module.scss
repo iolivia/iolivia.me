@@ -8,42 +8,11 @@ a {
     text-decoration: none;
 }
 
-// Fonts
-// body {
-//     font-family: "Raleway", sans-serif;
-//     font-size: 1em;
-//     color: #666666;
-// }
-
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6 {
-//     font-weight: normal;
-// }
-
-// Links
-// a {
-//     color: #333333;
-// }
-
-// a:hover {
-//     color: #87d8ea;
-// }
-
-// Generic
-// span {
-//     display: inline-block;
-//     vertical-align: middle;
-// }
-
-// .separator {
-//     height: 1px;
-//     width: 40%;
-//     background-color: #eff2f7;
-// }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
 // Containers
 .container {
@@ -121,7 +90,6 @@ nav a:hover {
   margin: 20px 50px;
 }
 
-
 // Main content
 .mainContent {
 }
@@ -129,6 +97,25 @@ nav a:hover {
 .mainContentInner {
   min-height: 400px;
   background-color: chocolate;
+}
+
+.postList {
+  background-color: deeppink;
+  overflow: hidden;
+  padding: 30px 0;
+}
+
+// Post
+.post {
+  background-color: greenyellow;
+  display: block;
+  width: 320px;
+  float: left;
+  margin: 0 40px 55px 0;
+}
+
+li:nth-child(3n+3) .post {
+  margin-right: 0px;
 }
 
 // Footer
@@ -161,69 +148,3 @@ nav a:hover {
     color: white;
   }
 }
-
-
-// .banner {
-//     min-height: 400px;
-//     display: block;
-//     padding: 100px 15%;
-//     text-align: center;
-//     color: white;
-// }
-
-// .bannerGraphics {
-//     background-color: #333333;
-//     display: block;
-//     height: 100px;
-// }
-
-// .title {
-//     margin-bottom: 20px;
-// }
-
-// .tagline {
-//     margin-bottom: 50px;
-// }
-
-// .posts {
-//     max-width: 800px;
-//     margin: 0px auto;
-// }
-
-// .post {
-//     display: block;
-//     margin-top: 10px;
-//     padding: 15px;
-// }
-
-// .postTitle {
-//     padding-bottom: 10px;
-//     display: block;
-// }
-
-// .postExcerpt {
-//     padding-bottom: 10px;
-// }
-
-// .postMetadata {
-//     font-size: 0.8em;
-//     color: rgb(178, 186, 189);
-//     margin-bottom: 15px;
-// }
-
-// .postDate {
-//     padding-right: 10px;
-// }
-
-// .postTags {
-//     padding: 0 10px;
-// }
-
-// .footer {
-//     padding-top: 15px;
-//     margin-top: 20px;
-//     background-color: #87d8ea;
-//     height: 65px;
-//     text-align: center;
-//     color: white;
-// }
