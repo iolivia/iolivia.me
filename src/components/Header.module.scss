@@ -1,0 +1,57 @@
+@import "./../utils";
+
+// Header
+.header {
+    background-color: $color-highlight;
+}
+
+.headerInner {}
+
+.headerNavigation {
+    overflow: hidden;
+    padding-top: 15px;
+    border-bottom: 1px solid $color-separators;
+}
+
+a.headerNavigationLogo {
+    display: block;
+    float: left;
+    padding: 10px;
+}
+
+a.headerNavigationLogo:hover {
+  color: $color-text-highlight;
+}
+
+.headerNavigationMenu {
+    display: block;
+    float: right;
+}
+
+nav a {
+    margin-left: 10px;
+    padding: 10px;
+    float: right;
+}
+
+nav a:hover {
+  color: $color-text-highlight;
+}
+
+.banner {
+    text-align: center;
+    padding: 75px 0;
+}
+
+.bannerGraphic {
+    height: 150px;
+}
+
+.bannerTitle {
+    margin-top: 15px;
+}
+
+.bannerTagline {
+    margin: 20px 50px;
+}
+

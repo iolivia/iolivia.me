@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Colors 
+$color-background: white;
+$color-highlight: rgb(54, 199, 243);
+$color-text: rgb(71, 71, 71);
+$color-text-dark: rgb(65, 65, 65);
+$color-text-highlight: white;
+$color-separators: rgba(255, 255, 255, 0.2);
+
+// Containers
+.container {
+    width: 100%;
+    background-color: $color-background;
+}
+
+.innerContainer {
+    max-width: 1040px;
+    display: block;
+    height: inherit;
+    margin: 0 auto;
+}

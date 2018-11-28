@@ -1,13 +1,14 @@
 import * as React from 'react'
 import * as styles from './index.module.scss'
 
-import { Button } from '../components/Button';
+import Header from './../components/Header';
 import { graphql } from 'gatsby'
 
 interface IndexPageProps {
   data: {
     site: {
       siteMetadata: {
+        logo: string,
         title: string,
         tagline: string,
       }
@@ -29,6 +30,7 @@ export const indexPageQuery = graphql`
   query IndexPageQuery {
     site {
       siteMetadata {
+        logo
         title
         tagline
       }
@@ -54,7 +56,7 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
   public render() {
 
-    const { title, tagline } = this.props.data.site.siteMetadata;
+    const { logo, title, tagline } = this.props.data.site.siteMetadata;
     const edges: any[] = this.props.data.allMarkdownRemark.edges;
     const posts = edges.concat(edges).concat(edges);
 
@@ -62,51 +64,7 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
       <div className={styles.container}>
 
         {/* Header */}
-        <div className={styles.header}>
-
-          <div className={`${styles.headerInner} ${styles.innerContainer}`}>
-
-            {/* Navigation */}
-            <div className={styles.headerNavigation}>
-
-              {/* Logo */}
-              <a className={styles.headerNavigationLogo} href="/">
-                john snow
-              </a>
-
-              {/* Nav menu */}
-              <nav className={styles.headerNavigationMenu}>
-                <a href="/">menu1</a>
-                <a href="/">menu2</a>
-                <a href="/">menu3</a>
-              </nav>
-            </div>
-
-            {/* Banner */}
-            <div className={styles.banner}>
-
-              {/* Graphic */}
-              <div className={styles.bannerGraphic}>
-              </div>
-
-              {/* Title */}
-              <div className={styles.bannerTitle}>
-                <h1>
-                  Hello! This is the title.
-                </h1>
-              </div>
-
-              {/* Tagline */}
-              <div className={styles.bannerTagline}>
-                <h3>
-                  This is a slightly smaller piece of text, the tagline. Make me interesting.
-                </h3>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
+        <Header logoTitle={logo} headerTagline={tagline} headerTitle={title} />
 
         {/* Main content */}
         <div className={styles.mainContent}>
@@ -149,6 +107,9 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
         <footer className={styles.footer}>
 
           <div className={`${styles.footerInner} ${styles.innerContainer}`}>
+
+            <div className={styles.footerSeparator}>
+            </div>
 
             <div className={styles.footerCopyright}>
               Copyright 2018

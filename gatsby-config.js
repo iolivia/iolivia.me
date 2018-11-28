@@ -1,5 +1,6 @@
 module.exports = {
     siteMetadata: {
+      logo: 'john snow',
       title: `Hi! I'm John and this is my website.`,
       tagline: `I am a Typescript guru 💪 and I love my static websites.`
     },  

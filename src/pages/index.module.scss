@@ -1,9 +1,4 @@
-// Colors 
-$color-background: white;
-$color-highlight: rgb(54, 199, 243);
-$color-text: rgb(71, 71, 71);
-$color-text-dark: rgb(65, 65, 65);
-$color-text-highlight: white;
+@import "./../utils";
 
 // Removing defaults we don't need
 * {
@@ -78,72 +73,7 @@ pre {
     line-height: 18.5714px;
 }
 
-// Containers
-.container {
-    width: 100%;
-    background-color: $color-background;
-}
 
-.innerContainer {
-    max-width: 1040px;
-    display: block;
-    height: inherit;
-    margin: 0 auto;
-}
-
-// Header
-.header {
-    background-color: $color-highlight;
-}
-
-.headerInner {}
-
-.headerNavigation {
-    overflow: hidden;
-    padding-top: 15px;
-}
-
-a.headerNavigationLogo {
-    display: block;
-    float: left;
-    padding: 10px;
-}
-
-a.headerNavigationLogo:hover {
-  color: $color-text-highlight;
-}
-
-.headerNavigationMenu {
-    display: block;
-    float: right;
-}
-
-nav a {
-    margin-left: 10px;
-    padding: 10px;
-    float: right;
-}
-
-nav a:hover {
-  color: $color-text-highlight;
-}
-
-.banner {
-    text-align: center;
-    padding: 75px 0;
-}
-
-.bannerGraphic {
-    height: 150px;
-}
-
-.bannerTitle {
-    margin-top: 15px;
-}
-
-.bannerTagline {
-    margin: 20px 50px;
-}
 
 // Main content
 .mainContent {}
@@ -192,6 +122,12 @@ li:nth-child(3n+3) .post {
 .footer {
     background-color: $color-highlight;
     display: block;
+}
+
+.footerSeparator {
+    display: block;
+    height: 10px;
+    border-bottom: 1px solid $color-separators;
 }
 
 .footerInner {
