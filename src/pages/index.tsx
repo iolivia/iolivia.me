@@ -91,16 +91,16 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
               {/* Title */}
               <div className={styles.bannerTitle}>
-                <h3>
+                <h1>
                   Hello! This is the title.
-              </h3>
+                </h1>
               </div>
 
               {/* Tagline */}
               <div className={styles.bannerTagline}>
-                <h5>
+                <h3>
                   This is a slightly smaller piece of text, the tagline. Make me interesting.
-              </h5>
+                </h3>
               </div>
 
             </div>
@@ -124,9 +124,9 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
                     <img src="https://via.placeholder.com/320x200" />
 
-                    <h3>
+                    <h2>
                       This is the title
-                    </h3>
+                    </h2>
 
                     <p>
                       This is an excerpt of the post you are about to read. You just need to click it to read the whole thing.

@@ -1,3 +1,10 @@
+// Colors 
+$color-background: white;
+$color-highlight: rgb(54, 199, 243);
+$color-text: rgb(71, 71, 71);
+$color-text-dark: rgb(65, 65, 65);
+$color-text-highlight: white;
+
 // Removing defaults we don't need
 * {
     margin: 0px;
@@ -9,142 +16,203 @@ a {
 }
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+// Fonts 
+body {
+  font-family: Nunito;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+
+  color: $color-text;
+}
+
+h1 {
+    font-family: Nunito;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 26.4px;
+}
+
+h3 {
+    font-family: Nunito;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 15.4px;
+}
+
+p {
+    font-family: Nunito;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+blockquote {
+    font-family: Nunito;
+    font-size: 21px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+pre {
+    font-family: Nunito;
+    font-size: 13px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 18.5714px;
 }
 
 // Containers
 .container {
     width: 100%;
-    background-color: #333333;
+    background-color: $color-background;
 }
 
 .innerContainer {
-  max-width: 1040px;
-  display: block;
-  height: inherit;
-  margin: 0 auto;
+    max-width: 1040px;
+    display: block;
+    height: inherit;
+    margin: 0 auto;
 }
 
 // Header
 .header {
-  background-color: aliceblue;
+    background-color: $color-highlight;
 }
 
-.headerInner {
-}
+.headerInner {}
 
 .headerNavigation {
-  background-color: red;
-  overflow: hidden;
-  padding-top: 15px;
+    overflow: hidden;
+    padding-top: 15px;
 }
 
 a.headerNavigationLogo {
-  background-color: aquamarine;
-  display: block;
-  float: left;
-  padding: 10px;
+    display: block;
+    float: left;
+    padding: 10px;
 }
 
 a.headerNavigationLogo:hover {
-  background-color:black;
-  color: white;
+  color: $color-text-highlight;
 }
 
 .headerNavigationMenu {
-  background-color: bisque;
-  display: block;
-  float: right;
+    display: block;
+    float: right;
 }
 
 nav a {
-  background-color: cadetblue;
-  margin-left: 10px;
-  padding: 10px;
-  float: right;
+    margin-left: 10px;
+    padding: 10px;
+    float: right;
 }
 
 nav a:hover {
-  background-color:black;
-  color: white;
+  color: $color-text-highlight;
 }
 
 .banner {
-  background-color: pink;
-  text-align: center;
-  padding: 75px 0;
+    text-align: center;
+    padding: 75px 0;
 }
 
 .bannerGraphic {
-  background-color: blueviolet;
-  height: 150px;
+    height: 150px;
 }
 
 .bannerTitle {
-  margin-top: 15px;
+    margin-top: 15px;
 }
 
 .bannerTagline {
-  margin: 20px 50px;
+    margin: 20px 50px;
 }
 
 // Main content
-.mainContent {
-}
+.mainContent {}
 
 .mainContentInner {
-  min-height: 400px;
-  background-color: chocolate;
+    min-height: 400px;
 }
 
 .postList {
-  background-color: deeppink;
-  overflow: hidden;
-  padding: 30px 0;
+    overflow: hidden;
+    padding: 30px 0;
 }
 
 // Post
 .post {
-  background-color: greenyellow;
-  display: block;
-  width: 320px;
-  float: left;
-  margin: 0 40px 55px 0;
+    display: block;
+    width: 320px;
+    float: left;
+    margin: 0 40px 55px 0;
+}
+
+.post h2 {
+  padding: 10px 0px;
+}
+
+.post:hover {
+
+  h2 {
+    color: $color-highlight;
+  }
+
+  p {
+    color: $color-text-dark;
+  }
+}
+
+.post p {
+  padding-bottom: 10px;
 }
 
 li:nth-child(3n+3) .post {
-  margin-right: 0px;
+    margin-right: 0px;
 }
 
 // Footer
 .footer {
-  background-color:darkgreen;
-  display: block;
+    background-color: $color-highlight;
+    display: block;
 }
 
 .footerInner {
-  overflow: hidden;
-  padding: 10px;
+    overflow: hidden;
+    padding: 10px;
 }
 
 .footerCopyright {
-  display: block;
-  float: left;
-  padding: 10px;
+    display: block;
+    float: left;
+    padding: 10px;
 }
 
 .footerLinks {
-  display: block;
-  float: right;
-  padding: 10px;
-
-  a {
+    display: block;
+    float: right;
     padding: 10px;
-  }
-
-  a:hover {
-    color: white;
-  }
+    a {
+        padding: 10px;
+    }
+    a:hover {
+        color: $color-text-highlight;
+    }
 }
