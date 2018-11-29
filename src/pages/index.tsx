@@ -16,6 +16,9 @@ interface IndexPageProps {
         tagline: string,
         footerLinks: Map<string, string>,
         socialLinks: Map<string, string>,
+        settings: {
+          animationsEnabled: boolean
+        }
       },
     },
     allMarkdownRemark: {
@@ -40,6 +43,9 @@ export const indexPageQuery = graphql`
         tagline
         footerLinks
         socialLinks
+        settings {
+          animationsEnabled
+        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -71,7 +77,7 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
   public render() {
 
     // site metadata
-    const { logo, title, tagline, footerLinks, socialLinks } = this.props.data.site.siteMetadata;
+    const { logo, title, tagline, footerLinks, socialLinks, settings } = this.props.data.site.siteMetadata;
 
     const posts: any[] = this.props.data.allMarkdownRemark.edges;
 
@@ -79,7 +85,12 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
       <div className={styles.container}>
 
         {/* Header */}
-        <Header logoTitle={logo} headerTagline={tagline} headerTitle={title} />
+        <Header 
+          logoTitle={logo} 
+          headerTagline={tagline} 
+          headerTitle={title} 
+          animationsEnabled={settings.animationsEnabled}
+        />
 
         {/* Main content */}
         <div className={styles.mainContent}>

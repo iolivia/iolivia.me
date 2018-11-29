@@ -2,7 +2,7 @@ module.exports = {
     siteMetadata: {
       logo: 'john snow',
       title: `Hi! I'm John and this is my website.`,
-      tagline: `I am a Typescript guru 💪 and I love my static websites.`,
+      tagline: `I am a Typescript guru and I love my static websites.`,
       footerLinks: [
         ["option2", "/link"],
         ["option4", "/link"],
@@ -12,7 +12,10 @@ module.exports = {
         ["facebook", "/link"],
         ["github", "/link"],
         ["quora", "/link"],
-      ]
+      ],
+      settings: {
+        animationsEnabled: false
+      }
     },
     plugins: [
       `gatsby-plugin-sass`,
