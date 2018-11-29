@@ -35,18 +35,6 @@ interface IndexPageProps {
 
 export const indexPageQuery = graphql`
   query IndexPageQuery {
-    site {
-      siteMetadata {
-        logo
-        title
-        tagline
-        footerLinks
-        socialLinks
-        settings {
-          animationsEnabled
-        }
-      }
-    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
@@ -74,26 +62,11 @@ export const indexPageQuery = graphql`
 export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
   public render() {
-
-    // site metadata
-    const { logo, title, tagline, footerLinks, socialLinks, settings } = this.props.data.site.siteMetadata;
-    const headerProps: HeaderProps = {
-      logoTitle: logo,
-      headerTitle: title,
-      headerTagline: tagline,
-      animationsEnabled: settings.animationsEnabled
-    };
-    const footerProps: FooterProps = {
-      footerText: "Copyright 2018",
-      footerMenuOptions: new Map(footerLinks),
-      footerSocialLinks: new Map(socialLinks),
-    };
-
     const posts: any[] = this.props.data.allMarkdownRemark.edges;
 
     return (
 
-      <Page headerProps={headerProps} footerProps={footerProps}>
+      <Page>
 
         <div>
           <ul className={styles.postList}>

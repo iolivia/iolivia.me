@@ -1,87 +1,95 @@
 import * as React from 'react'
 import * as styles from './Header.module.scss'
 
+import { StaticQuery, graphql } from 'gatsby';
+
 import { Random } from 'react-animated-text';
 
-export interface HeaderProps {
-    logoTitle: string,
-    headerTitle: string,
-    headerTagline: string,
-    animationsEnabled: boolean
-}
+export default () => (
+    <StaticQuery
+        query={graphql`
+        query HeadingQuery {
+          site {
+            siteMetadata {
+                logo
+                title
+                tagline
+                settings {
+                    animationsEnabled
+                }
+            }
+          }
+        }
+      `}
+        render={data => (
 
-export default class Header extends React.Component<HeaderProps, {}> {
+            <header>
+                <div className={`${styles.header} ${styles.pattern}`}>
 
-    public render() {
+                    <div className={`${styles.headerInner} ${styles.innerContainer}`}>
 
-        const { logoTitle, headerTitle, headerTagline, animationsEnabled} = this.props;
-        
-        return (
-            <div className={`${styles.header} ${styles.pattern}`}>
+                        {/* Navigation */}
+                        <div className={styles.headerNavigation}>
 
-                <div className={`${styles.headerInner} ${styles.innerContainer}`}>
+                            {/* Logo */}
+                            <a className={styles.headerNavigationLogo} href="/">
+                                {data.site.siteMetadata.logo}
+                            </a>
 
-                    {/* Navigation */}
-                    <div className={styles.headerNavigation}>
+                            {/* Nav menu */}
+                            <nav className={styles.headerNavigationMenu}>
+                                <a href="/">menu1</a>
+                                <a href="/">menu2</a>
+                                <a href="/">menu3</a>
+                            </nav>
+                        </div>
 
-                        {/* Logo */}
-                        <a className={styles.headerNavigationLogo} href="/">
-                            {logoTitle}
-                        </a>
+                        {/* Banner */}
+                        <div className={styles.banner}>
 
-                        {/* Nav menu */}
-                        <nav className={styles.headerNavigationMenu}>
-                            <a href="/">menu1</a>
-                            <a href="/">menu2</a>
-                            <a href="/">menu3</a>
-                        </nav>
+                            {/* Graphic */}
+                            <div className={styles.bannerGraphic}>
+                            </div>
+
+                            {/* Title */}
+                            <div className={styles.bannerTitle}>
+                                <h1>
+                                    {data.site.siteMetadata.settings.animationsEnabled
+                                        ?
+                                        <Random
+                                            text={data.site.siteMetadata.title}
+                                            iterations={1}
+                                            effect="fadeIn"
+                                            effectChange={2}
+                                            effectDirection="up"
+                                        />
+                                        : data.site.siteMetadata.title
+                                    }
+                                </h1>
+                            </div>
+
+                            {/* Tagline */}
+                            <div className={styles.bannerTagline}>
+                                <h3>
+                                    {data.site.siteMetadata.settings.animationsEnabled
+                                        ?
+                                        <Random
+                                            text={data.site.siteMetadata.tagline}
+                                            iterations={1}
+                                            effect="fadeIn"
+                                            effectChange={2}
+                                            effectDirection="up"
+                                        />
+                                        : data.site.siteMetadata.tagline
+                                    }
+                                </h3>
+                            </div>
+
+                        </div>
                     </div>
 
-                    {/* Banner */}
-                    <div className={styles.banner}>
-
-                        {/* Graphic */}
-                        <div className={styles.bannerGraphic}>
-                        </div>
-
-                        {/* Title */}
-                        <div className={styles.bannerTitle}>
-                            <h1>
-                                {animationsEnabled
-                                    ? 
-                                    <Random
-                                    text={headerTitle}
-                                    iterations={1}
-                                    effect="fadeIn"
-                                    effectChange={2}
-                                    effectDirection="up"
-                                    />
-                                    : headerTitle
-                                }
-                            </h1>
-                        </div>
-
-                        {/* Tagline */}
-                        <div className={styles.bannerTagline}>
-                            <h3>
-                                {animationsEnabled
-                                    ? 
-                                    <Random
-                                    text={headerTagline}
-                                    iterations={1}
-                                    effect="fadeIn"
-                                    effectChange={2}
-                                    effectDirection="up"
-                                    />
-                                    : headerTagline
-                                }
-                            </h3>
-                        </div>
-
-                    </div>
                 </div>
-
-            </div>
-        );
-    }
-}
+            </header>
+        )}
+    />
+)
