@@ -1,6 +1,7 @@
 import * as React from 'react'
 import * as styles from './index.module.scss'
 
+import Footer from '../components/Footer';
 import Header from './../components/Header';
 import { graphql } from 'gatsby'
 
@@ -104,25 +105,16 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
         </div>
 
         {/* Footer */}
-        <footer className={styles.footer}>
-
-          <div className={`${styles.footerInner} ${styles.innerContainer}`}>
-
-            <div className={styles.footerSeparator}>
-            </div>
-
-            <div className={styles.footerCopyright}>
-              Copyright 2018
-            </div>
-
-            <div className={styles.footerLinks}>
-              <a href="/">footerMenu1</a>
-              <a href="/">footerMenu2</a>
-            </div>
-
-          </div>
-          
-        </footer>
+        <Footer 
+          footerText="Copyright 2018"
+          footerMenuOptions={
+            new Map([
+              ["option1", "/link"],
+              ["option2", "/link"],
+              ["option3", "/link"],
+            ])
+          }
+        />
 
       </div>
     )

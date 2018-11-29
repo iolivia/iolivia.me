@@ -1,8 +1,6 @@
 import * as React from 'react'
 import * as styles from './Header.module.scss'
 
-import { graphql } from 'gatsby'
-
 interface HeaderProps {
     logoTitle: string,
     headerTitle: string,

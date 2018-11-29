@@ -117,38 +117,3 @@ pre {
 li:nth-child(3n+3) .post {
     margin-right: 0px;
 }
-
-// Footer
-.footer {
-    background-color: $color-highlight;
-    display: block;
-}
-
-.footerSeparator {
-    display: block;
-    height: 10px;
-    border-bottom: 1px solid $color-separators;
-}
-
-.footerInner {
-    overflow: hidden;
-    padding: 10px;
-}
-
-.footerCopyright {
-    display: block;
-    float: left;
-    padding: 10px;
-}
-
-.footerLinks {
-    display: block;
-    float: right;
-    padding: 10px;
-    a {
-        padding: 10px;
-    }
-    a:hover {
-        color: $color-text-highlight;
-    }
-}
