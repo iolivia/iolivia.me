@@ -8,6 +8,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
   return new Promise((resolve, reject) => {
     const blogPost = path.resolve('./src/templates/blog-post.tsx')
+
     resolve(
       graphql(
         `
@@ -23,7 +24,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                   }
                   frontmatter {
                     title
-                    imageUrl
                   }
                 }
               }

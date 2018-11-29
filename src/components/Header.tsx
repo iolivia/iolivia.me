@@ -3,7 +3,7 @@ import * as styles from './Header.module.scss'
 
 import { Random } from 'react-animated-text';
 
-interface HeaderProps {
+export interface HeaderProps {
     logoTitle: string,
     headerTitle: string,
     headerTagline: string,

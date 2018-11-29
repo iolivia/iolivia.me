@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as styles from './Footer.module.scss'
 
-interface FooterProps {
+export interface FooterProps {
     footerText: string,
     footerMenuOptions: Map<string, string>, // key to link
     footerSocialLinks: Map<string, string>, // key to link

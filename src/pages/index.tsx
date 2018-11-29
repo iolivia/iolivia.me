@@ -1,9 +1,8 @@
 import * as React from 'react'
 import * as styles from './index.module.scss'
 
-import Footer from '../components/Footer';
-import Header from './../components/Header';
-import Img from 'gatsby-image'
+import { HeaderProps } from '../components/Header';
+import Page from '../components/Page';
 import PostPreview from '../components/PostPreview';
 import { graphql } from 'gatsby'
 
@@ -78,42 +77,31 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
     // site metadata
     const { logo, title, tagline, footerLinks, socialLinks, settings } = this.props.data.site.siteMetadata;
+    const headerProps: HeaderProps = {
+      logoTitle: logo,
+      headerTitle: title,
+      headerTagline: tagline,
+      animationsEnabled: settings.animationsEnabled
+    };
+    const footerProps: FooterProps = {
+      footerText: "Copyright 2018",
+      footerMenuOptions: new Map(footerLinks),
+      footerSocialLinks: new Map(socialLinks),
+    };
 
     const posts: any[] = this.props.data.allMarkdownRemark.edges;
 
     return (
-      <div className={styles.container}>
 
-        {/* Header */}
-        <Header 
-          logoTitle={logo} 
-          headerTagline={tagline} 
-          headerTitle={title} 
-          animationsEnabled={settings.animationsEnabled}
-        />
+      <Page headerProps={headerProps} footerProps={footerProps}>
 
-        {/* Main content */}
-        <div className={styles.mainContent}>
-          <div className={`${styles.mainContentInner} ${styles.innerContainer}`}>
-
-            <div>
-
-              <ul className={styles.postList}>
-                {this.buildPostList(posts)}
-              </ul>
-
-            </div>
-          </div>
+        <div>
+          <ul className={styles.postList}>
+            {this.buildPostList(posts)}
+          </ul>
         </div>
 
-        {/* Footer */}
-        <Footer 
-          footerText="Copyright 2018"
-          footerMenuOptions={new Map(footerLinks)}
-          footerSocialLinks={new Map(socialLinks)}
-        />
-
-      </div>
+      </Page>
     )
   }
 
@@ -121,20 +109,20 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
     const postElements = [];
 
     console.log(posts);
-    
+
     for (const item of posts) {
       const post = item.node;
-      
+
       postElements.push((
-        <PostPreview 
+        <PostPreview
           imageSizes={post.frontmatter.featuredImage.childImageSharp.sizes}
           title={post.frontmatter.title}
           excerpt={post.excerpt}
-          url="/"
+          url={post.fields.slug}
         />
       ));
     }
 
     return postElements;
-}
+  }
 }
