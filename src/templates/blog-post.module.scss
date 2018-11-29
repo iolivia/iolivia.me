@@ -1,2 +1,38 @@
 @import "./../utils";
 
+.contentContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.postContainer {
+    width: 700px;
+    display: block;
+}
+
+.postImage {
+}
+
+.postTitle {
+    text-align: center;
+
+    h1 {
+        margin: 15px 0;
+    }
+}
+
+.postContent {
+    text-align: left;
+
+    p {
+        line-height: 35px;
+        font-size: 21px;
+    }
+}
+
+.sidebar {
+    width: 250px;
+    display: block;
+    background-color: $color-sidebar;
+}

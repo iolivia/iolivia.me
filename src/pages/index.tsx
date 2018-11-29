@@ -50,7 +50,7 @@ export const indexPageQuery = graphql`
                   ...GatsbyImageSharpSizes
                 }
               }
-          }
+            }
           }
         }
       }
