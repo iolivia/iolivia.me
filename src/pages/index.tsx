@@ -94,13 +94,9 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
                 </li>
                 )}
-
-
               </ul>
 
             </div>
-
-
           </div>
         </div>
 
@@ -112,6 +108,13 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
               ["option1", "/link"],
               ["option2", "/link"],
               ["option3", "/link"],
+            ])
+          }
+          footerSocialLinks={
+            new Map([
+              ["facebook", "/link"],
+              ["github", "/link"],
+              ["quora", "/link"],
             ])
           }
         />

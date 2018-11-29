@@ -10,11 +10,33 @@
     display: block;
     height: 10px;
     border-bottom: 1px solid $color-separators;
+    margin-bottom: 10px;
 }
 
 .footerInner {
     overflow: hidden;
     padding: 10px;
+}
+
+.footerSocialIcons {
+    align-items: center;
+    margin: 0 auto;
+    float: left;
+    padding-top: 10px;
+}
+
+.footerSocialIconsItem {
+    display: inline;
+    margin-right: 10px;
+    text-align: center;
+
+    :hover {
+        color: $color-text-highlight;
+    }
+
+    a span {
+        padding-left: 3px;
+    }
 }
 
 .footerCopyright {

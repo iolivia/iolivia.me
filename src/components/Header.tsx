@@ -14,7 +14,7 @@ export default class Header extends React.Component<HeaderProps, {}> {
         const { logoTitle, headerTitle, headerTagline} = this.props;
         
         return (
-            <div className={styles.header}>
+            <div className={`${styles.header} ${styles.pattern}`}>
 
                 <div className={`${styles.headerInner} ${styles.innerContainer}`}>
 
