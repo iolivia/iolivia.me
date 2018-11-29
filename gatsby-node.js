@@ -23,6 +23,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                   }
                   frontmatter {
                     title
+                    imageUrl
                   }
                 }
               }

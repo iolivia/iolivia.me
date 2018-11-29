@@ -1,6 +1,7 @@
 ---
 date: "2018-11-07"
 title: "Where can I get some fake text?"
+featuredImage: "./featured.jpg"
 ---
 
 Where can I get some?

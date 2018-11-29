@@ -18,27 +18,22 @@ export default class Footer extends React.Component<FooterProps, {}> {
 
                 <div className={`${styles.footerInner} ${styles.innerContainer}`}>
 
-
-
                     <div className={styles.footerSeparator} />
-
-                    {/* Copyright and links */}
-
 
                     {/* Social links */}
                     <ul className={styles.footerSocialIcons}>
                         {this.buildSocialLinks()}
                     </ul>
 
+                    {/* Copyright */}
                     <div className={styles.footerCopyright}>
                         {footerText}
                     </div>
 
+                    {/* Footer links */}
                     <div className={styles.footerLinks}>
                         {this.buildFooterLinks()}
                     </div>
-
-
                 </div>
 
             </footer>

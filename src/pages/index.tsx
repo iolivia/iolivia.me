@@ -3,6 +3,7 @@ import * as styles from './index.module.scss'
 
 import Footer from '../components/Footer';
 import Header from './../components/Header';
+import Img from 'gatsby-image'
 import PostPreview from '../components/PostPreview';
 import { graphql } from 'gatsby'
 
@@ -51,6 +52,13 @@ export const indexPageQuery = graphql`
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title
+            featuredImage {
+              childImageSharp{
+                sizes(maxWidth: 320, maxHeight: 200) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+          }
           }
         }
       }
@@ -65,8 +73,7 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
     // site metadata
     const { logo, title, tagline, footerLinks, socialLinks } = this.props.data.site.siteMetadata;
 
-    const edges: any[] = this.props.data.allMarkdownRemark.edges;
-    const posts = edges.concat(edges).concat(edges);
+    const posts: any[] = this.props.data.allMarkdownRemark.edges;
 
     return (
       <div className={styles.container}>
@@ -78,23 +85,10 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
         <div className={styles.mainContent}>
           <div className={`${styles.mainContentInner} ${styles.innerContainer}`}>
 
-            <div className={styles.postList}>
+            <div>
 
-              <ul>
-
-                {Array.from(Array(10).keys()).map((x, i) =>
-
-                <li key={i}>
-
-                  <PostPreview 
-                    imageUrl="https://via.placeholder.com/320x200"
-                    title="This is a short title"
-                    excerpt="This is an excerpt of the post you are about to read. You just need to click it to read the wh"
-                    url="/"
-                  />
-
-                </li>
-                )}
+              <ul className={styles.postList}>
+                {this.buildPostList(posts)}
               </ul>
 
             </div>
@@ -111,4 +105,25 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
       </div>
     )
   }
+
+  private buildPostList = (posts: any[]) => {
+    const postElements = [];
+
+    console.log(posts);
+    
+    for (const item of posts) {
+      const post = item.node;
+      
+      postElements.push((
+        <PostPreview 
+          imageSizes={post.frontmatter.featuredImage.childImageSharp.sizes}
+          title={post.frontmatter.title}
+          excerpt={post.excerpt}
+          url="/"
+        />
+      ));
+    }
+
+    return postElements;
+}
 }
