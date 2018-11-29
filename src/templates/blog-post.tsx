@@ -1,5 +1,7 @@
 import * as React from 'react'
+import * as styles from './blog-post.module.scss'
 
+import Page from '../components/Page';
 import { graphql } from 'gatsby'
 
 interface BlogPostTemplateProps {
@@ -14,9 +16,13 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
         const post = this.props.data.markdownRemark;
 
         return (
+          <Page>
+
             <div>
-                <div dangerouslySetInnerHTML={{ __html: post.html }} />
+              <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </div>
+
+          </Page>
         );
     }
 }
@@ -24,11 +30,6 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html

@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import { Random } from 'react-animated-text';
 
-export default () => (
+export default (isMinimal: boolean) => (
     <StaticQuery
         query={graphql`
         query HeadingQuery {
@@ -44,7 +44,9 @@ export default () => (
                             </nav>
                         </div>
 
+
                         {/* Banner */}
+                        {!isMinimal &&
                         <div className={styles.banner}>
 
                             {/* Graphic */}
@@ -86,6 +88,7 @@ export default () => (
                             </div>
 
                         </div>
+                        }
                     </div>
 
                 </div>

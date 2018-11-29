@@ -1,7 +1,6 @@
 import * as React from 'react'
 import * as styles from './index.module.scss'
 
-import { HeaderProps } from '../components/Header';
 import Page from '../components/Page';
 import PostPreview from '../components/PostPreview';
 import { graphql } from 'gatsby'

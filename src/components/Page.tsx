@@ -12,7 +12,7 @@ export default class Page extends React.Component<{}, {}> {
             <div className={styles.container}>
 
             {/* Header */}
-            <Header />
+            <Header isMinimal={true} />
     
             {/* Main content */}
             <div className={styles.mainContent}>
