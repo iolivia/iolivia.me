@@ -3,6 +3,7 @@ import * as styles from './index.module.scss'
 
 import Footer from '../components/Footer';
 import Header from './../components/Header';
+import PostPreview from '../components/PostPreview';
 import { graphql } from 'gatsby'
 
 interface IndexPageProps {
@@ -85,18 +86,12 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
                 <li key={i}>
 
-                  <a className={styles.post} href="/">
-
-                    <img src="https://via.placeholder.com/320x200" />
-
-                    <h2>
-                      This is the title
-                    </h2>
-
-                    <p>
-                      This is an excerpt of the post you are about to read. You just need to click it to read the whole thing.
-                    </p>
-                  </a>
+                  <PostPreview 
+                    imageUrl="https://via.placeholder.com/320x200"
+                    title="This is a short title"
+                    excerpt="This is an excerpt of the post you are about to read. You just need to click it to read the wh"
+                    url="/"
+                  />
 
                 </li>
                 )}

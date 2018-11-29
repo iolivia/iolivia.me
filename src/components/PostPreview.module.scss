@@ -1,0 +1,32 @@
+@import "./../utils";
+
+// Post
+.post {
+    display: block;
+    width: 320px;
+    float: left;
+    margin: 0 40px 55px 0;
+}
+
+.post h2 {
+  padding: 10px 0px;
+}
+
+.post:hover {
+
+  h2 {
+    color: $color-highlight;
+  }
+
+  p {
+    color: $color-text-dark;
+  }
+}
+
+.post p {
+  padding-bottom: 10px;
+}
+
+li:nth-child(3n+3) .post {
+    margin-right: 0px;
+}
