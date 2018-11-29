@@ -2,8 +2,18 @@ module.exports = {
     siteMetadata: {
       logo: 'john snow',
       title: `Hi! I'm John and this is my website.`,
-      tagline: `I am a Typescript guru 💪 and I love my static websites.`
-    },  
+      tagline: `I am a Typescript guru 💪 and I love my static websites.`,
+      footerLinks: [
+        ["option2", "/link"],
+        ["option4", "/link"],
+        ["option3", "/link"],
+      ],
+      socialLinks: [
+        ["facebook", "/link"],
+        ["github", "/link"],
+        ["quora", "/link"],
+      ]
+    },
     plugins: [
       `gatsby-plugin-sass`,
       `gatsby-plugin-typescript`,

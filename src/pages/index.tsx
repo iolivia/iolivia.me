@@ -12,7 +12,9 @@ interface IndexPageProps {
         logo: string,
         title: string,
         tagline: string,
-      }
+        footerLinks: Map<string, string>,
+        socialLinks: Map<string, string>,
+      },
     },
     allMarkdownRemark: {
       edges: {
@@ -34,6 +36,8 @@ export const indexPageQuery = graphql`
         logo
         title
         tagline
+        footerLinks
+        socialLinks
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -57,7 +61,9 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
   public render() {
 
-    const { logo, title, tagline } = this.props.data.site.siteMetadata;
+    // site metadata
+    const { logo, title, tagline, footerLinks, socialLinks } = this.props.data.site.siteMetadata;
+
     const edges: any[] = this.props.data.allMarkdownRemark.edges;
     const posts = edges.concat(edges).concat(edges);
 
@@ -103,20 +109,8 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
         {/* Footer */}
         <Footer 
           footerText="Copyright 2018"
-          footerMenuOptions={
-            new Map([
-              ["option1", "/link"],
-              ["option2", "/link"],
-              ["option3", "/link"],
-            ])
-          }
-          footerSocialLinks={
-            new Map([
-              ["facebook", "/link"],
-              ["github", "/link"],
-              ["quora", "/link"],
-            ])
-          }
+          footerMenuOptions={new Map(footerLinks)}
+          footerSocialLinks={new Map(socialLinks)}
         />
 
       </div>
