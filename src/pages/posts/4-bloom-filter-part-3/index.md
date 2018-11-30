@@ -116,4 +116,4 @@ bool BloomFilter::isMaybePresent(std::string input) const
 }
 ```
 
-And this is pretty much it. You can see the full code at [olivif/bloom-filter](https://github.com/olivif/bloom-filter/tree/master/BloomFilter/src). Next up we'll do some experiments with `n` and `k` and see what our error rates are.
+And this is pretty much it. You can see the full code at [iolivia/bloom-filter](https://github.com/iolivia/bloom-filter). Next up we'll do some experiments with `n` and `k` and see what our error rates are.

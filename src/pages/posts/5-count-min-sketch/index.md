@@ -6,7 +6,7 @@ tags: [sketch, count min sketch, hashing, cpp, c++]
 featuredImage: "./sketch.jpg"
 ---
 
-[Last time](/2017/bloom-filter-part-3/) we looked at Bloom filters, which is one type of probabilistic data structure. In this post we will look at another one - [Count Min Sketch](https://en.wikipedia.org/wiki/Count%E2%80%93min_sketch).   
+[Last time](/posts/4-bloom-filter-part-3/) we looked at Bloom filters, which is one type of probabilistic data structure. In this post we will look at another one - [Count Min Sketch](https://en.wikipedia.org/wiki/Count%E2%80%93min_sketch).   
 
 In short, a count min sketch is used to:
 * consume a stream of events, where each event has an event type
@@ -137,4 +137,4 @@ uint32_t CountMinSketch::getFrequency(const std::string & key) const
 }
 ```
 
-You can see the full implementation at [Sketch](https://github.com/olivif/bloom-filter/tree/master/BloomFilter/src).
+You can see the full implementation at [Sketch](https://github.com/iolivia/bloom-filter/tree/master/BloomFilter/src/Sketch).

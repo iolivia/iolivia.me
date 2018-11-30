@@ -54,4 +54,4 @@ Fun fact, this is actually [what Medium does](https://blog.medium.com/what-are-b
 
 Bloom filters are widely used for this type of quick filtering when the answer is mostly no. They are also used in [Chrome](http://blog.alexyakunin.com/2010/03/nice-bloom-filter-application.html), [Akamai](https://www.akamai.com/jp/ja/multimedia/documents/technical-publication/algorithmic-nuggets-in-content-delivery-technical-publication.pdf) and [Bitcoin](http://www.newsbtc.com/2016/05/10/developers-introduce-bloom-filters-improve-bitcoin-wallet-security/).
 
-Now that we've seen what Bloom filters can do and why they are useful, we'll look at how they do this in [part 2](/2017/bloom-filter-part-2/).
+Now that we've seen what Bloom filters can do and why they are useful, we'll look at how they do this in [part 2](/posts/3-bloom-filter-part-2/).

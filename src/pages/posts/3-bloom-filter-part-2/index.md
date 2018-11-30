@@ -6,7 +6,7 @@ tags: [bloom filter, bloom, cpp, c++]
 featuredImage: "./bloom-flower-2.jpg"
 ---
 
-[Last time](/2017/bloom-filter-part-1/) we talked about what a Bloom filter is and why you might use it. In this post we will cover how Bloom filters work internally and how they achieve constant time lookups. 
+[Last time](/posts/2-bloom-filter-part-1/) we talked about what a Bloom filter is and why you might use it. In this post we will cover how Bloom filters work internally and how they achieve constant time lookups. 
 
 We start off with an array of bits of a fixed size `n` (where `n` is dependent on the number of inserts we plan to make) which we initialize to zeroes. We will also need a list of `k` hashing functions. Each hashing function needs to map to an index into our array, so `0` -> `n-1`. It's important we pick uniformly distributed and different hashing functions, and we'll see in a minute why. 
 
@@ -116,4 +116,4 @@ Checking whether an element is present in the Bloom filter
 * apply all k hashing functions to input
 * if all bits defined by the hashing are set (1) we return true, otherwise we return false
 
-[Next up](/2017/bloom-filter-part-3/), we'll look at how to implement this.
+[Next up](/posts/4-bloom-filter-part-3/), we'll look at how to implement this.
