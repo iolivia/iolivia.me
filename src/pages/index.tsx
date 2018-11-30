@@ -67,11 +67,9 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
       <Page>
 
-        <div>
-          <ul className={styles.postList}>
-            {this.buildPostList(posts)}
-          </ul>
-        </div>
+        <ul className={styles.postList}>
+          {this.buildPostList(posts)}
+        </ul>
 
       </Page>
     )

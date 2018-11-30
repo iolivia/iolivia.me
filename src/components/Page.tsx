@@ -17,7 +17,9 @@ export default class Page extends React.Component<{}, {}> {
             <div className={styles.mainContent}>
               <div className={`${styles.mainContentInner} ${styles.innerContainer}`}>
     
-                {this.props.children}
+                <div className={styles.pageInner}>
+                  {this.props.children}
+                </div>
                 
               </div>
             </div>

@@ -1,6 +1,11 @@
 @import "./../utils";
 
+
 // Containers
+.pageInner {
+    margin-left: 35%;
+}
+
 .container {
     width: 100%;
     background-color: $color-background;
@@ -124,7 +129,6 @@ pre {
 
 .mainContentInner {
     min-height: 400px;
-    margin-left: 35%;
 }
 
 .postList {
@@ -136,7 +140,7 @@ pre {
 
 // Media queries
 @media only screen and (max-width: 1026px) { 
-    .mainContentInner {
+    .pageInner {
         margin: 0 auto;
     }
 }
