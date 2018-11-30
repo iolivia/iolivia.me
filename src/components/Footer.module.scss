@@ -4,6 +4,20 @@
 .footer {
     background-color: $color-highlight;
     display: block;
+
+    // Highlight style
+    a {
+        color: $color-text;
+    }
+
+    a:hover {
+        color: $color-text-highlight;
+    }
+}
+
+.footer ul {
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .footerSeparator {

@@ -3,6 +3,21 @@
 // Header
 .header {
     background-color: $color-highlight;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    // Highlight style
+    a {
+        color: $color-text;
+    }
+
+    a:hover {
+        color: $color-text-highlight;
+    }
 }
 
 .headerInner {}
@@ -32,10 +47,6 @@ nav a {
     margin-left: 10px;
     padding: 10px;
     float: right;
-}
-
-nav a:hover {
-  color: $color-text-highlight;
 }
 
 .banner {
