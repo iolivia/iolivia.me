@@ -47,7 +47,7 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
 
             {/* Metadata */}
             <div className={styles.postMetadata}>
-              <div>by <a href="/">{author}</a> on Jun 2017</div>
+              <div>by <a href="/">{author}</a> on {post.frontmatter.date}</div>
               <div className={styles.separatorBottom} />
             </div>
 
