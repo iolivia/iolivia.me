@@ -1,8 +1,8 @@
 module.exports = {
     siteMetadata: {
       fullName: 'olivia ifrim',
-      title: `Senior Software Engineer @ Daisie`,
-      tagline: `ex Amazon | ex Microsoft`,
+      title: `Software Engineer`,
+      tagline: ``,
       email: `olivia_github@outlook.com`,
       footerLinks: [
         ["google.com", "https://www.google.com"],
@@ -42,6 +42,13 @@ module.exports = {
           }
         },
       `gatsby-transformer-sharp`,
-      `gatsby-plugin-sharp`
+      `gatsby-plugin-sharp`,
+      {
+        resolve: `gatsby-plugin-google-analytics`,
+        options: {
+          trackingId: "UA-XXXXXXXXX-X",
+          head: true,
+        },
+      },
     ],
   }
