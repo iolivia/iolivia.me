@@ -15,7 +15,8 @@ interface BlogPostTemplateProps {
 class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
   render() {
     const post = this.props.data.markdownRemark;
-
+    const author = this.props.data.site.siteMetadata.fullName;
+    
     return (
       <Page>
 
@@ -29,7 +30,15 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
 
             {/* Title */}
             <div className={styles.postTitle}>
+              <div className={styles.separatorTop} />
               <h1>{post.frontmatter.title}</h1>
+              <div className={styles.separatorBottom} />
+            </div>
+
+            {/* Metadata */}
+            <div className={styles.postMetadata}>
+              <div>by <a href="/">{author}</a> on Jun 2017</div>
+              <div className={styles.separatorBottom} />
             </div>
 
             {/* Content */}
@@ -50,6 +59,11 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        fullName
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html

@@ -11,7 +11,7 @@ export default (isMinimal: boolean) => (
         query HeadingQuery {
           site {
             siteMetadata {
-                logo
+                fullName
                 title
                 tagline
                 settings {
@@ -33,7 +33,7 @@ export default (isMinimal: boolean) => (
 
                             {/* Logo */}
                             <a className={styles.headerNavigationLogo} href="/">
-                                {data.site.siteMetadata.logo}
+                                {data.site.siteMetadata.fullName}
                             </a>
 
                             {/* Nav menu */}

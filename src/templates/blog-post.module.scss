@@ -22,6 +22,17 @@
     }
 }
 
+.postMetadata {
+
+    a {
+        color: $color-highlight;
+    }
+
+    a:hover {
+        color: $color-text;
+    }
+}
+
 .postContent {
     text-align: left;
 
