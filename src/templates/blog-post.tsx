@@ -1,6 +1,8 @@
 import * as React from 'react'
 import * as styles from './blog-post.module.scss'
 
+import { DiscussionEmbed } from "disqus-react";
+
 import Img from 'gatsby-image'
 import Page from '../components/Page';
 import { graphql } from 'gatsby'
@@ -15,8 +17,16 @@ interface BlogPostTemplateProps {
 class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
   render() {
     const post = this.props.data.markdownRemark;
-    const author = this.props.data.site.siteMetadata.fullName;
+
+    const siteMetadata = this.props.data.site.siteMetadata;
+    const author = siteMetadata.fullName;
     
+    const disqusShortname = siteMetadata.settings.disqusShortName;
+    const disqusConfig = {
+      identifier: post.id,
+      title: post.frontmatter.title,
+    };
+
     return (
       <Page>
 
@@ -46,6 +56,8 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </div>
 
+            {/* Disqus comments */}
+            <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
           </div>
         </div>
 
@@ -60,6 +72,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         fullName
+        settings {
+          disqusShortName
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

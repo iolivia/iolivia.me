@@ -13,7 +13,8 @@ module.exports = {
         ["quora", "https://www.quora.com/profile/Olivia-Ifrim"],
       ],
       settings: {
-        animationsEnabled: true
+        animationsEnabled: true,
+        disqusShortName: "oliviaifrim"
       }
     },
     plugins: [
