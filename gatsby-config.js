@@ -1,17 +1,14 @@
 module.exports = {
     siteMetadata: {
-      fullName: 'john snow',
-      title: `Hi! I'm John and this is my website.`,
-      tagline: `I am a Typescript guru and I love my static websites.`,
+      fullName: 'olivia ifrim',
+      title: ``,
+      tagline: ``,
       footerLinks: [
-        ["option2", "/link"],
-        ["option4", "/link"],
-        ["option3", "/link"],
       ],
       socialLinks: [
-        ["facebook", "/link"],
-        ["github", "/link"],
-        ["quora", "/link"],
+        ["linkedin", "https://www.linkedin.com/in/oliviaifrim/"],
+        ["github", "https://github.com/iolivia"],
+        ["quora", "https://www.quora.com/profile/Olivia-Ifrim"],
       ],
       settings: {
         animationsEnabled: false
