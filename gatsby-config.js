@@ -1,8 +1,9 @@
 module.exports = {
     siteMetadata: {
       fullName: 'olivia ifrim',
-      title: ``,
-      tagline: ``,
+      title: `Senior Software Engineer @ Daisie`,
+      tagline: `ex Amazon | ex Microsoft`,
+      email: `olivia_github@outlook.com`,
       footerLinks: [
         ["google.com", "https://www.google.com"],
       ],
@@ -12,7 +13,7 @@ module.exports = {
         ["quora", "https://www.quora.com/profile/Olivia-Ifrim"],
       ],
       settings: {
-        animationsEnabled: false
+        animationsEnabled: true
       }
     },
     plugins: [

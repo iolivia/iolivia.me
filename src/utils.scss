@@ -25,20 +25,6 @@ $color-highlight-darker: rgb(39, 154, 189);
       );
 }
 
-// Containers
-.container {
-    width: 100%;
-    background-color: $color-background;
-}
-
-.innerContainer {
-    min-height: 70%;
-    max-width: 1040px;
-    display: block;
-    height: inherit;
-    margin: 0 auto;
-}
-
 // Separators
 .separatorTop {
     display: block;

@@ -46,7 +46,7 @@ export const indexPageQuery = graphql`
             title
             featuredImage {
               childImageSharp{
-                sizes(maxWidth: 320, maxHeight: 200) {
+                sizes(maxWidth: 230, maxHeight: 230) {
                   ...GatsbyImageSharpSizes
                 }
               }

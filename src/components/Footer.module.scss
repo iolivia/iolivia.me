@@ -15,11 +15,6 @@
     }
 }
 
-.footer ul {
-    margin-left: 0;
-    padding-left: 0;
-}
-
 .footerSeparator {
     display: block;
     height: 10px;
@@ -28,14 +23,13 @@
 }
 
 .footerInner {
-    overflow: hidden;
     padding: 10px;
+    display: flex;
+    justify-content: space-between
 }
 
 .footerSocialIcons {
     align-items: center;
-    margin: 0 auto;
-    float: left;
     padding-top: 10px;
 }
 
@@ -55,8 +49,8 @@
 
 .footerCopyright {
     display: block;
-    float: left;
     padding: 10px;
+    align-self: flex-start;
 }
 
 .footerLinks {

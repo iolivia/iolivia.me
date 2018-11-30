@@ -1,18 +1,17 @@
 import * as React from 'react'
 import * as styles from './Page.module.scss'
 
-import Footer from './Footer';
-import Header from './Header';
+import Banner from './Banner';
 
 export default class Page extends React.Component<{}, {}> {
 
     public render() {
 
         return (
-            <div className={styles.container}>
+          <div className={styles.container}>
 
-            {/* Header */}
-            <Header isMinimal={true} />
+            {/* Banner */}
+            <Banner />
     
             {/* Main content */}
             <div className={styles.mainContent}>
@@ -22,9 +21,6 @@ export default class Page extends React.Component<{}, {}> {
                 
               </div>
             </div>
-    
-            {/* Footer */}
-            <Footer />
     
           </div>
         );

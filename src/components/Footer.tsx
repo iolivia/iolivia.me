@@ -49,24 +49,24 @@ export default () => (
         render={data => (
             <footer className={`${styles.footer} ${styles.pattern}`}>
 
+                <div className={styles.footerSeparator} />
+
                 <div className={`${styles.footerInner} ${styles.innerContainer}`}>
 
-                    <div className={styles.footerSeparator} />
+                    {/* Copyright */}
+                    <div className={styles.footerCopyright}>
+                        {"Copyright 2018"}
+                    </div>
 
                     {/* Social links */}
                     <ul className={styles.footerSocialIcons}>
                         {buildSocialLinks(data.site.siteMetadata.socialLinks)}
                     </ul>
 
-                    {/* Copyright */}
-                    <div className={styles.footerCopyright}>
-                        {"Copyright 2018/9"}
-                    </div>
-
                     {/* Footer links */}
-                    <div className={styles.footerLinks}>
+                    {/* <div className={styles.footerLinks}>
                         {buildFooterLinks(data.site.siteMetadata.footerLinks)}
-                    </div>
+                    </div> */}
                 </div>
 
             </footer>

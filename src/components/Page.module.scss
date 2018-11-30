@@ -1,5 +1,20 @@
 @import "./../utils";
 
+// Containers
+.container {
+    width: 100%;
+    background-color: $color-background;
+    display: flex;
+    justify-content: space-between;
+    height: 0px;
+}
+
+.innerContainer {
+    min-height: 70%;
+    display: block;
+    height: inherit;
+}
+
 // Removing defaults we don't need
 p {
     margin: 20px 0;
@@ -35,22 +50,46 @@ body {
   color: $color-text;
 }
 
-h1 {
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
     font-family: Nunito;
-    font-size: 24px;
     font-style: normal;
     font-variant: normal;
     font-weight: 700;
-    line-height: 26.4px;
+}
+
+h1 {
+    font-size: 26px;
+    line-height: 26px;
+}
+
+h2 {
+    font-size: 23px;
+    line-height: 23px;
 }
 
 h3 {
-    font-family: Nunito;
-    font-size: 14px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 700;
-    line-height: 15.4px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 18px;
+}
+
+h5 {
+    font-size: 17px;
+    line-height: 17px;
+}
+
+h6 {
+    font-size: 15px;
+    line-height: 15px;
 }
 
 p {
@@ -80,13 +119,12 @@ pre {
     line-height: 18.5714px;
 }
 
-
-
 // Main content
 .mainContent {}
 
 .mainContentInner {
     min-height: 400px;
+    margin-left: 35%;
 }
 
 .postList {
@@ -94,4 +132,11 @@ pre {
 
     display: flex;
     justify-content: space-between;
+}
+
+// Media queries
+@media only screen and (max-width: 1026px) { 
+    .mainContentInner {
+        margin: 0 auto;
+    }
 }
