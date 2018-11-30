@@ -18,7 +18,7 @@ Note that the Bloom filter doesn't store the raw data so it's not a replacement 
 
 Let's take a an example. We'll start by putting some items into the Bloom filter.
 
-```c++
+```cpp
 put("A") 
 put("B")
 put("C")
@@ -26,7 +26,7 @@ put("C")
 
 Now let's ask the filter if these items are present
 
-```c++
+```cpp
 isMaybePresent("D") 
 false 
 // the item is definitely not in the set, and we know this is correct

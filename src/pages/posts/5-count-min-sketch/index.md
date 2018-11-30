@@ -25,7 +25,7 @@ We will need:
 We'll start off with a blank 2D array. 
 
 
-```c++
+```cpp
 // rows = 3, cols = 5
 0 0 0 0 0
 0 0 0 0 0
@@ -34,7 +34,7 @@ We'll start off with a blank 2D array.
 
 Now let's insert some events.
 
-```c++
+```cpp
 // This will insert an event of type "A".
 insert("A")
 
@@ -52,7 +52,7 @@ insert("A")
 ```
 
 Now an event of a different type.
-```c++
+```cpp
 insert("B")
 
 // h0("B") - 1
@@ -64,7 +64,7 @@ insert("B")
 ```
 
 Rememeber we are inserting a stream of events, so we will have many events of the same type. So let's insert another event of type "A";
-```c++
+```cpp
 insert("A")
 
 // h0("A") - 2
@@ -77,7 +77,7 @@ insert("A")
 
 Great, now how do we query for the frequency of an event?
 
-```c++
+```cpp
 getFrequency("A")
 
 // This is our state
@@ -102,7 +102,7 @@ getFrequency("A")
 
 Next up, we'll implement this. We already have all the building blocks for double hashing from the Bloom filter so the implementation should be pretty straight-forward. 
 
-```c++
+```cpp
 void CountMinSketch::insert(const std::string & key)
 {
     for (size_t row = 0; row < m_rows; ++row)

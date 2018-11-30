@@ -12,14 +12,14 @@ We start off with an array of bits of a fixed size `n` (where `n` is dependent o
 
 For this example we'll take `n = 10` and `k = 3`.
 
-```c++
+```cpp
 // Start off with our array of zeroes
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ```
 
 Now, let's see what putting an element does internally.
 
-```c++
+```cpp
 put("A") 
 
 // We take "A" and apply all k hashing functions to it
@@ -37,7 +37,7 @@ Now let's do some queries.
 
 First let's query for an element which is there. We expect true here.
 
-```c++
+```cpp
 isMaybePresent("A") 
 
 // We take "A" and apply all k hashing functions to it (again)
@@ -54,7 +54,7 @@ true
 
 Now let's query for an element which we know is not there. We expect false here *most of the time*.
 
-```c++
+```cpp
 isMaybePresent("D") 
 
 // We take "D" and apply all k hashing functions to it
@@ -72,7 +72,7 @@ false
 
 OK this makes sense but why can't we say for sure the element is there? When could we query for `"D"` without ever inserting it into the Bloom filter and get true? Let's put another element in.
 
-```c++
+```cpp
 put("B") 
 
 // We take "B" and apply all k hashing functions to it
@@ -86,7 +86,7 @@ k3("B") -> 4
 
 Now let's query for `"D"` again. 
 
-```c++
+```cpp
 isMaybePresent("D") 
 
 // We take "D" and apply all k hashing functions to it

@@ -8,7 +8,7 @@ tags: []
 
 Hello world, this is the first post!
 
-```JavaScript
+```json
 {
     resolve: `gatsby-source-filesystem`,
     options: {
@@ -16,3 +16,13 @@ Hello world, this is the first post!
     name: "pages",
     },
 }
+```
+
+And now some fake JavaScript. 
+
+```javascript
+setTimeout(function(){
+    // do something interesting
+    doSomething();
+}, 100);
+```

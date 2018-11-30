@@ -10,7 +10,7 @@ Last time we looked at how the internals of Bloom filters work. In this post, we
 
 We'll set up an interface with pure virtuals. 
 
-```c++
+```cpp
 class IBloomFilter 
 {
 public:
@@ -23,7 +23,7 @@ Now we'll need to pick something to use as our array of bits. The two obvious ch
 
 Here is our class definition. 
 
-```c++
+```cpp
 class BloomFilter : public IBloomFilter {
 
 public:
@@ -52,7 +52,7 @@ So all we have to do is pick 2 different hashing functions, and for every iterat
 
 We will use [Murmur Hash](https://github.com/aappleby/smhasher) for generating the two unique hashes.
 
-```c++
+```cpp
 std::array<uint32_t, 2> Hash::hash(const std::string & input) const
 {
     std::array<uint32_t, 2> out;
@@ -65,7 +65,7 @@ std::array<uint32_t, 2> Hash::hash(const std::string & input) const
 And now we just apply the forumula for every iteration. We also modulo with the size of our filter to make sure the numbers we get are actually in our Bloom filter range.
 
 
-```c++
+```cpp
 std::vector<uint32_t> Hash::hash(const std::string& input, unsigned int iterations, unsigned int max) const
 {
     auto hashesIndexed = std::vector<uint32_t>();
@@ -85,7 +85,7 @@ std::vector<uint32_t> Hash::hash(const std::string& input, unsigned int iteratio
 
 Now that we have all the moving parts, we can easily implement `put` and `isMaybePresent`.
 
-```c++
+```cpp
 void BloomFilter::put(std::string input)
 {
     // Hash and get k indexes
