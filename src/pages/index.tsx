@@ -1,5 +1,3 @@
-import * as prism from './prismjs/themes/prism-tomorrow.css';
-
 import * as React from 'react'
 import * as styles from './index.module.scss'
 
