@@ -20,6 +20,9 @@
 
 .postMetadata {
 
+    display: flex;
+    justify-content: space-between;
+    
     a {
         color: $color-highlight;
     }
@@ -27,6 +30,15 @@
     a:hover {
         color: $color-text;
     }
+}
+
+.author {
+    flex-grow: 1;
+    // display: flex-start;
+}
+
+.tagsList {
+    // display: flex-end;
 }
 
 .postContent,
@@ -39,4 +51,12 @@
 
 .postContent pre {
     font-size: 15px;
+}
+
+ul.tagsList {
+    list-style-type: none;
+}
+
+ul.tagsList li {
+    display: inline-block;
 }

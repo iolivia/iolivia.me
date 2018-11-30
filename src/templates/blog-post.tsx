@@ -47,9 +47,30 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
 
             {/* Metadata */}
             <div className={styles.postMetadata}>
-              <div>by <a href="/">{author}</a> on {post.frontmatter.date}</div>
-              <div className={styles.separatorBottom} />
+
+              {/* author and date */}
+              <div className={styles.author}>
+                by <a href="/">{author}</a> on {post.frontmatter.date}
+              </div>
+
+              {/* tags */}
+              <div className={styles.tags}>
+                <ul className={styles.tagsList}>
+                  {
+                    post.frontmatter.tags.map((tag, index) => {
+                      return (
+                        <li key={ index }>
+                          &nbsp;{" •"}&nbsp;
+                          {tag}
+                        </li>);
+                    })
+                  }
+                </ul>
+              </div>
+
             </div>
+            <div className={styles.separatorBottom} />
+
 
             {/* Content */}
             <div className={styles.postContent}>
@@ -83,6 +104,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        tags
         featuredImage {
           childImageSharp{
             sizes(maxWidth: 700, maxHeight: 300) {
