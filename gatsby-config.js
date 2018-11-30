@@ -4,6 +4,7 @@ module.exports = {
       title: ``,
       tagline: ``,
       footerLinks: [
+        ["google.com", "https://www.google.com"],
       ],
       socialLinks: [
         ["linkedin", "https://www.linkedin.com/in/oliviaifrim/"],
@@ -25,8 +26,20 @@ module.exports = {
           name: "markdown-pages",
         },
       },
-      `gatsby-transformer-remark`,
+      {
+        resolve: `gatsby-transformer-remark`,
+        options: {
+          plugins: [
+            {
+              resolve: `gatsby-remark-prismjs`,
+              options: {
+                classPrefix: "language-",
+            }
+            }
+          ]
+          }
+        },
       `gatsby-transformer-sharp`,
-      `gatsby-plugin-sharp`,
+      `gatsby-plugin-sharp`
     ],
   }
