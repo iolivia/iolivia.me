@@ -40,9 +40,9 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
 
             {/* Title */}
             <div className={styles.postTitle}>
-              <div className={styles.separatorTop} />
+              <div className={styles.separatorTopDark} />
               <h1>{post.frontmatter.title}</h1>
-              <div className={styles.separatorBottom} />
+              <div className={styles.separatorBottomDark} />
             </div>
 
             {/* Metadata */}
@@ -69,7 +69,7 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
               </div>
 
             </div>
-            <div className={styles.separatorBottom} />
+            <div className={styles.separatorBottomDark} />
 
 
             {/* Content */}

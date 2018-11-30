@@ -9,7 +9,7 @@ export default class Banner extends React.Component<{}, {}> {
     public render() {
 
         return (
-          <div className={`${styles.banner} ${styles.pattern}`}>
+          <div className={`${styles.bannerContainer} ${styles.pattern}`}>
 
             {/* Header */}
             <Header />

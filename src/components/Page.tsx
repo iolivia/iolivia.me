@@ -8,20 +8,14 @@ export default class Page extends React.Component<{}, {}> {
     public render() {
 
         return (
-          <div className={styles.container}>
+          <div className={styles.pageContainer}>
 
             {/* Banner */}
             <Banner />
     
             {/* Main content */}
-            <div className={styles.mainContent}>
-              <div className={`${styles.mainContentInner} ${styles.innerContainer}`}>
-    
-                <div className={styles.pageInner}>
-                  {this.props.children}
-                </div>
-                
-              </div>
+            <div className={`${styles.pageInnerContainer}`}>
+                {this.props.children}
             </div>
     
           </div>

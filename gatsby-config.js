@@ -4,9 +4,6 @@ module.exports = {
       title: `Software Engineer`,
       tagline: ``,
       email: `olivia_github@outlook.com`,
-      footerLinks: [
-        ["google.com", "https://www.google.com"],
-      ],
       socialLinks: [
         ["linkedin", "https://www.linkedin.com/in/oliviaifrim/"],
         ["github", "https://github.com/iolivia"],

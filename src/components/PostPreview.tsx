@@ -16,7 +16,7 @@ export default class PostPreview extends React.Component<PostPreviewProps, {}> {
         const { imageSizes, title, excerpt, url } = this.props;
 
         return (
-            <a className={styles.post} href={url}>
+            <a className={styles.postPreviewContainer} href={url}>
                 <Img sizes={imageSizes} />
                 <h2>{title}</h2>
                 <p>{excerpt}</p>

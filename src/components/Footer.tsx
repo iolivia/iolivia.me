@@ -3,17 +3,6 @@ import * as styles from './Footer.module.scss'
 
 import { StaticQuery, graphql } from 'gatsby';
 
-const buildFooterLinks = (linksData) => {
-    const footerMenuOptions = new Map(linksData);
-    const links = [];
-
-    for (const key of footerMenuOptions.keys()) {
-        links.push(<a key={key} href={footerMenuOptions.get(key)}>{key}</a>);
-    }
-
-    return links;
-}
-
 const buildSocialLinks = (linksData) => {
     const footerSocialLinks = new Map(linksData);
     const links = [];
@@ -40,33 +29,27 @@ export default () => (
         query FooterQuery {
           site {
             siteMetadata {
-              footerLinks
               socialLinks
             }
           }
         }
       `}
         render={data => (
-            <footer className={`${styles.footer} ${styles.pattern}`}>
+            <footer className={`${styles.footerContainer} ${styles.pattern}`}>
 
-                <div className={styles.footerSeparator} />
+                <div className={styles.separatorBottomLight} />
 
-                <div className={`${styles.footerInner} ${styles.innerContainer}`}>
+                <div className={`${styles.footerInnerContainer} ${styles.innerContainer}`}>
 
                     {/* Copyright */}
-                    <div className={styles.footerCopyright}>
+                    <div className={styles.footerCopyrightSection}>
                         {"Copyright 2018"}
                     </div>
 
                     {/* Social links */}
-                    <ul className={styles.footerSocialIcons}>
+                    <ul className={styles.footerSocialIconsSection}>
                         {buildSocialLinks(data.site.siteMetadata.socialLinks)}
                     </ul>
-
-                    {/* Footer links */}
-                    {/* <div className={styles.footerLinks}>
-                        {buildFooterLinks(data.site.siteMetadata.footerLinks)}
-                    </div> */}
                 </div>
 
             </footer>

@@ -1,19 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
 
-// Colors 
+// Conventions:
+// * every class is prefixed with the component it belongs to
+
+// ----------- Colors -----------------
+
 $color-background: white;
 $color-text: rgb(71, 71, 71);
 $color-text-dark: rgb(65, 65, 65);
 $color-text-highlight: white;
-$color-separator: rgba(17, 17, 17, 0.2);
-$color-separator-highlight: rgba(255, 255, 255, 0.2);
+$color-separator-light: rgba(255, 255, 255, 0.2);
 $color-sidebar: rgba(245, 245, 245, 0.1);
-
-// Background pattern
+$color-separator-dark: rgba(17, 17, 17, 0.2);
 $color-highlight: rgb(54, 199, 243);
 $color-highlight-dark: rgb(61, 202, 245);
 $color-highlight-darker: rgb(39, 154, 189);
+
+// ----------- / Colors -----------------
+
+
+// ----------- Patterns -----------------
 
 .pattern {
     background: repeating-linear-gradient(
@@ -25,17 +32,251 @@ $color-highlight-darker: rgb(39, 154, 189);
       );
 }
 
-// Separators
-.separatorTop {
+// ----------- / Patterns -----------------
+
+
+// ----------- Separators -----------------
+
+.separatorTopDark {
     display: block;
     height: 10px;
-    border-top: 1px solid $color-separator;
+    border-top: 1px solid $color-separator-dark;
     margin: 10px 0;
 }
 
-.separatorBottom {
+.separatorBottomDark {
     display: block;
     height: 10px;
-    border-top: 1px solid $color-separator;
+    border-top: 1px solid $color-separator-dark;
     margin: 10px 0;
 }
+
+.separatorTopLight {
+    display: block;
+    height: 10px;
+    border-top: 1px solid $color-separator-light;
+    margin: 10px 0;
+}
+
+.separatorBottomLight {
+    display: block;
+    height: 10px;
+    border-bottom: 1px solid $color-separator-light;
+    margin-bottom: 10px;
+}
+// ----------- / Separators -----------------
+
+// ----------- Defaults -----------------
+
+p {
+    margin: 20px 0;
+    line-height: 1.7em;
+}
+
+* {
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+// Normal style
+a {
+    color: $color-highlight;
+}
+
+a:hover {
+    color: $color-highlight-darker;
+}
+
+// Fonts 
+body {
+  font-family: Nunito;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+
+  color: $color-text;
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+    font-family: Nunito;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 26px;
+    line-height: 26px;
+}
+
+h2 {
+    font-size: 23px;
+    line-height: 23px;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 18px;
+}
+
+h5 {
+    font-size: 17px;
+    line-height: 17px;
+}
+
+h6 {
+    font-size: 15px;
+    line-height: 15px;
+}
+
+p {
+    font-family: Nunito;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+blockquote {
+    font-family: Nunito;
+    font-size: 21px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+pre {
+    font-family: Nunito;
+    font-size: 13px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 18.5714px;
+}
+
+// ----------- / Defaults -----------------
+
+
+// ----------- Page -----------------
+
+// Page full container
+.pageContainer {
+}
+
+// Page inner container - left side
+.pageInnerContainer {
+    margin-left: calc(25% + 100px);
+    margin-right: 50px;
+}
+
+// Media queries
+@media only screen and (max-width: 1026px) { 
+    .pageInnerContainer {
+        margin: 0 auto;
+    }
+}
+
+// ----------- / Page -----------------
+
+
+// ----------- Banner -----------------
+
+.bannerContainer {
+    width: 25%;
+    min-width: 250px;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: fixed;
+}
+
+// Media queries
+@media only screen and (max-width: 1026px) { 
+    .bannerContainer {
+        display: none;
+    }
+}
+
+// ----------- / Banner -----------------
+
+
+// ----------- Footer -----------------
+
+.footerContainer {
+    background-color: $color-highlight;
+    display: block;
+
+    a {
+        color: $color-text;
+    }
+
+    a:hover {
+        color: $color-text-highlight;
+    }
+}
+
+.footerInnerContainer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.footerCopyrightSection {
+}
+
+.footerSocialIconsSection {
+}
+
+.footerSocialIconsItem {
+    display: inline;
+    margin-left: 10px;
+}
+
+// ----------- / Footer -----------------
+
+
+// ----------- PostPreview -----------------
+
+.postPreviewContainer {
+    display: block;
+    width: 230px;
+    margin-bottom: 55px;
+    margin-right: 15px;
+    color: $color-text;
+}
+
+.postPreviewContainer h2 {
+  padding: 10px 0px;
+}
+
+.postPreviewContainer:hover {
+
+  h2 {
+    color: $color-highlight;
+  }
+
+  p {
+    color: $color-text-dark;
+  }
+}
+
+// ----------- / PostPreview -----------------
