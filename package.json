@@ -17,6 +17,7 @@
     "gatsby-plugin-react-helmet": "^3.0.3",
     "gatsby-plugin-sass": "^2.0.0-rc.2",
     "gatsby-plugin-sharp": "^2.0.14",
+    "gatsby-plugin-sitemap": "^2.0.3",
     "gatsby-plugin-typescript": "^2.0.0-rc.6",
     "gatsby-remark-copy-linked-files": "^2.0.7",
     "gatsby-remark-emojis": "^0.2.3",

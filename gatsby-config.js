@@ -13,7 +13,8 @@ module.exports = {
       animationsEnabled: true,
       disqusShortName: "oliviaifrim"
     },
-    description: `London based technology blog covering design, architecture, best practices, react and advanced data structures and algorithms.`
+    description: `London based technology blog covering design, architecture, best practices, react and advanced data structures and algorithms.`,
+    siteUrl: `https://iolivia.github.io`
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -82,6 +83,7 @@ module.exports = {
         head: true,
       },
     },
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`
   ],
 }
