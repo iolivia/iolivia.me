@@ -2,9 +2,9 @@ import * as React from 'react'
 import * as styles from './blog-post.module.scss'
 
 import { DiscussionEmbed } from "disqus-react";
-
 import Img from 'gatsby-image'
 import Page from '../components/Page';
+import SEO from '../components/SEO';
 import { graphql } from 'gatsby'
 
 interface BlogPostTemplateProps {
@@ -29,6 +29,11 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
 
     return (
       <Page>
+
+        <SEO 
+          title={post.frontmatter.title || siteMetadata.title}
+          description={post.excerpt || siteMetadata.description}
+        />
 
         <div className={styles.contentContainer}>
           <div className={styles.postContainer}>
@@ -101,6 +106,7 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
+      excerpt
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

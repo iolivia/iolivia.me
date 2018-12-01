@@ -3,6 +3,7 @@ import * as styles from './index.module.scss'
 
 import Page from '../components/Page';
 import PostPreview from '../components/PostPreview';
+import SEO from '../components/SEO';
 import { graphql } from 'gatsby'
 
 interface IndexPageProps {
@@ -35,6 +36,12 @@ interface IndexPageProps {
 
 export const indexPageQuery = graphql`
   query IndexPageQuery {
+    site {
+      siteMetadata {
+          title
+          description
+      }
+    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
@@ -63,10 +70,16 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
   public render() {
     const posts: any[] = this.props.data.allMarkdownRemark.edges;
+    const siteMetadata = this.props.data.site.siteMetadata;
 
     return (
 
       <Page>
+
+        <SEO 
+          title={siteMetadata.title}
+          description={siteMetadata.description}
+        />
 
         <ul className={styles.postList}>
           {this.buildPostList(posts)}

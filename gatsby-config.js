@@ -12,7 +12,8 @@ module.exports = {
     settings: {
       animationsEnabled: true,
       disqusShortName: "oliviaifrim"
-    }
+    },
+    description: `London based technology blog covering design, architecture, best practices, react and advanced data structures and algorithms.`
   },
   plugins: [
     `gatsby-plugin-sass`,
