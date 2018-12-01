@@ -27,3 +27,22 @@ module.exports = {
   plugins: [`gatsby-plugin-sitemap`],
 }
 ```
+
+## Robots
+
+```sh
+npm install --save gatsby-plugin-robots-txt
+```
+
+Add to the config.
+
+```js
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        sitemap: 'https://yourdomain.com/sitemap.xml'
+      }
+    }
+```
+
+PS: This got us to 30/30 on Website Grader.
