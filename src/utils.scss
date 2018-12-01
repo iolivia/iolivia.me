@@ -268,15 +268,24 @@ pre {
   padding: 10px 0px;
 }
 
+.postPreviewContainer p {
+    margin-top: 5px;
+}
+
 .postPreviewContainer:hover {
 
   h2 {
     color: $color-highlight;
   }
 
-  p {
+  p,
+  div {
     color: $color-text-dark;
   }
+}
+
+.postPreviewContainer .date {
+    margin-top: 10px;
 }
 
 // ----------- / PostPreview -----------------

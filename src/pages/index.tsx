@@ -24,6 +24,7 @@ interface IndexPageProps {
         node: {
           excerpt: string,
           frontmatter: {
+            date: string,
             title: string
           }
         }
@@ -89,6 +90,7 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
           title={post.frontmatter.title}
           excerpt={post.excerpt}
           url={post.fields.slug}
+          date={post.frontmatter.date}
         />
       ));
     }
