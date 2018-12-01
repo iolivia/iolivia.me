@@ -79,8 +79,6 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
   private buildPostList = (posts: any[]) => {
     const postElements = [];
 
-    console.log(posts);
-
     for (const item of posts) {
       const post = item.node;
 

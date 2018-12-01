@@ -1,1 +1,33 @@
 @import "./../utils";
+
+.postPreviewContainer {
+    display: block;
+    width: 230px;
+    margin-bottom: 55px;
+    margin-right: 15px;
+    color: $color-text;
+}
+
+.postPreviewContainer h2 {
+  padding: 10px 0px;
+}
+
+.postPreviewContainer p {
+    margin-top: 5px;
+}
+
+.postPreviewContainer:hover {
+
+  h2 {
+    color: $color-highlight;
+  }
+
+  p,
+  div {
+    color: $color-text-dark;
+  }
+}
+
+.postPreviewContainer .date {
+    margin-top: 10px;
+}

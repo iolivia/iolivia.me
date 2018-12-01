@@ -1,1 +1,31 @@
 @import "./../utils";
+
+.footerContainer {
+    background-color: $color-highlight;
+    display: block;
+
+    a {
+        color: $color-text;
+    }
+
+    a:hover {
+        color: $color-text-highlight;
+    }
+}
+
+.footerInnerContainer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.footerCopyrightSection {
+}
+
+.footerSocialIconsSection {
+}
+
+.footerSocialIconsItem {
+    display: inline;
+    margin-left: 10px;
+}

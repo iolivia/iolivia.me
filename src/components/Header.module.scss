@@ -1,7 +1,7 @@
 @import "./../utils";
 
 // Header
-.header {
+.headerContainer {
     flex-grow: 0.8;
     text-align: center;
     margin-top: 100px;
@@ -22,12 +22,13 @@
     }
 }
 
-.headerInner {}
+.headerInnerContainer {
+}
 
 .headerNavigation {
 }
 
-a.headerNavigationLogo {
+a.headerLogo {
     display: block;
     padding: 10px;
 
@@ -36,36 +37,13 @@ a.headerNavigationLogo {
     }
 }
 
-a.headerNavigationLogo:hover {
+a.headerLogo:hover {
   color: $color-text-highlight;
 }
 
-.headerNavigationMenu {
-    display: block;
-}
+.headerTitle {
 
-nav a {
-    margin-left: 10px;
-    padding: 10px;
-}
-
-.banner {
-    text-align: center;
-    padding: 75px 0;
-}
-
-.bannerGraphic {
-    height: 50px;
-}
-
-.bannerTitle {
-    margin-top: 15px;
-}
-
-.bannerTagline {
-    margin: 20px 50px;
-}
-
-.title {
-    margin-bottom: 10px;
+    h4 {
+        margin-bottom: 10px;
+    }
 }

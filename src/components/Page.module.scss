@@ -1,1 +1,18 @@
 @import "./../utils";
+
+// Page full container
+.pageContainer {
+}
+
+// Page inner container - left side
+.pageInnerContainer {
+    margin-left: calc(25% + 100px);
+    margin-right: 50px;
+}
+
+// Media queries
+@media only screen and (max-width: 1026px) { 
+    .pageInnerContainer {
+        margin: 0 auto;
+    }
+}

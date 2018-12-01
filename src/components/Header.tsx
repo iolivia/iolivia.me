@@ -24,57 +24,55 @@ export default () => (
       `}
         render={data => (
 
-            <header className={styles.header}>
-                    <div className={`${styles.headerInner} ${styles.innerContainer}`}>
+            <header className={styles.headerContainer}>
+                <div className={styles.headerInnerContainer}>
 
-                        {/* Navigation */}
-                        <div className={styles.headerNavigation}>
+                    {/* Navigation */}
+                    <div className={styles.headerNavigation}>
 
-                            {/* Logo */}
-                            <a className={styles.headerNavigationLogo} href="/">
-                                <h1>
+                        {/* Logo */}
+                        <a className={styles.headerLogo} href="/">
+                            <h1>
                                 {data.site.siteMetadata.settings.animationsEnabled
-                                        ?
-                                        <Random
-                                            text={data.site.siteMetadata.fullName}
-                                            iterations={1}
-                                            effect="fadeIn"
-                                            effectChange={2}
-                                            effectDirection="up"
-                                        />
-                                        : data.site.siteMetadata.fullName
-                                    }
-                                </h1>
-                            </a>
+                                    ?
+                                    <Random
+                                        text={data.site.siteMetadata.fullName}
+                                        iterations={1}
+                                        effect="fadeIn"
+                                        effectChange={2}
+                                        effectDirection="up"
+                                    />
+                                    : data.site.siteMetadata.fullName
+                                }
+                            </h1>
+                        </a>
+                        <div className={styles.separatorBottomLight} />
 
-                            <div>
+                        {/* Header info */}
+                        <div className={styles.headerInfo} >
+
+                            {/* Title */}
+                            <h4> {data.site.siteMetadata.title} </h4>
+
+                            {/* Tagline */}
+                            <p> {data.site.siteMetadata.tagline}  </p>
+                            
                             <div className={styles.separatorBottomLight} />
-                                
-                                <h4 className={styles.title}>
-                                    {data.site.siteMetadata.title}
-                                </h4>
+
+                            {/* Email */}
+                            <a href={`mailto:${data.site.siteMetadata.email}`}>
                                 <p>
-                                    {data.site.siteMetadata.tagline}
+                                    {data.site.siteMetadata.email}
                                 </p>
-                                <div className={styles.separatorBottomLight} />
+                            </a>
+                            
+                            <div className={styles.separatorBottomLight} />
 
-                                <a href={`mailto:${data.site.siteMetadata.email}`}>
-                                    <p>
-                                        {data.site.siteMetadata.email}
-                                    </p>
-                                </a>
-                                <div className={styles.separatorBottomLight} />
-
-                            </div>
-                            {/* Nav menu */}
-                            {/* <nav className={styles.headerNavigationMenu}>
-                                <a href="/">menu1</a>
-                                <a href="/">menu2</a>
-                                <a href="/">menu3</a>
-                            </nav> */}
                         </div>
 
                     </div>
+
+                </div>
             </header>
         )}
     />
