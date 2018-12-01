@@ -47,7 +47,7 @@ I also tried [Website Grader](https://website.grader.com) and surprisingly it ga
 # SEO checklist
 To combine everything we found in the previous section, here is our checklist of things to do to make Google (and other search engines, trying to be inclusive here) love us ~~more~~. I've ordered them by priority.
 
-1. Meta tags and helmet
+1. Meta tags and helmet -> PART 2
 1. Twitter (and presumably other social websites) cards
 1. Canonical URLs
 1. Redirects
