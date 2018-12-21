@@ -35,7 +35,7 @@ export default () => (
         }
       `}
         render={data => (
-            <footer className={`${styles.footerContainer} ${styles.pattern}`}>
+            <footer className={`${styles.footerContainer}`}>
 
                 <div className={styles.separatorBottomLight} />
 
