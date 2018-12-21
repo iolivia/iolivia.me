@@ -1,22 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito|Staatliches');
-
 @import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
 
-// Conventions:
-// * every class is prefixed with the component it belongs to
+
+// ----------- Layout -----------------
+.innerContainer {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+// ----------- / Layout -----------------
 
 // ----------- Colors -----------------
-
-$color-background: white;
+$color: white;
+$color-highlight: #f7484e;
+$color-highlight-dark: #f7565c;
 $color-text: rgb(71, 71, 71);
-$color-text-dark: rgb(65, 65, 65);
-$color-text-highlight: white;
+
 $color-separator-light: rgba(255, 255, 255, 0.2);
 $color-sidebar: rgba(245, 245, 245, 0.1);
 $color-separator-dark: rgba(17, 17, 17, 0.2);
-$color-highlight: #f7484e;
-$color-highlight-dark: #f7565c;
-$color-highlight-darker: #d1454a;
 
 // ----------- / Colors -----------------
 
@@ -88,7 +90,7 @@ a {
 }
 
 a:hover {
-    color: $color-highlight-darker;
+    color: $color-highlight;
 }
 
 // Fonts 

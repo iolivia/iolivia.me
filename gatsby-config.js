@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     fullName: 'olivia ifrim',
-    title: `Software Engineer`,
+    title: `Senior Software Engineer`,
     tagline: ``,
     email: `olivia_github@outlook.com`,
     socialLinks: [
@@ -10,11 +10,11 @@ module.exports = {
       ["quora", "https://www.quora.com/profile/Olivia-Ifrim"],
     ],
     settings: {
-      animationsEnabled: true,
+      animationsEnabled: false,
       disqusShortName: "oliviaifrim"
     },
     description: `London based technology blog covering design, architecture, best practices, react and advanced data structures and algorithms.`,
-    siteUrl: `https://iolivia.github.io`
+    siteUrl: `http://iolivia.me`
   },
   plugins: [
     `gatsby-plugin-sass`,

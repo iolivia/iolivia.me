@@ -24,8 +24,8 @@ export default () => (
       `}
         render={data => (
 
-            <header className={styles.headerContainer}>
-                <div className={styles.headerInnerContainer}>
+            <header className={`${styles.headerContainer} ${styles.pattern}`}>
+                <div className={styles.innerContainer}>
 
                     {/* Navigation */}
                     <div className={styles.headerNavigation}>
@@ -52,21 +52,17 @@ export default () => (
                         <div className={styles.headerInfo} >
 
                             {/* Title */}
-                            <h4> {data.site.siteMetadata.title} </h4>
+                            {/* <h4> {data.site.siteMetadata.title} </h4> */}
 
                             {/* Tagline */}
-                            <p> {data.site.siteMetadata.tagline}  </p>
-                            
-                            <div className={styles.separatorBottomLight} />
+                            {/* <p> {data.site.siteMetadata.tagline}  </p> */}
 
                             {/* Email */}
-                            <a href={`mailto:${data.site.siteMetadata.email}`}>
+                            {/* <a href={`mailto:${data.site.siteMetadata.email}`}>
                                 <p>
                                     {data.site.siteMetadata.email}
                                 </p>
-                            </a>
-                            
-                            <div className={styles.separatorBottomLight} />
+                            </a> */}
 
                         </div>
 

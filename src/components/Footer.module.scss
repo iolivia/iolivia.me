@@ -2,13 +2,15 @@
 
 .footerContainer {
     display: block;
-
+    color: $color;
+    padding-bottom: 15px;
+    
     a {
-        color: $color-text;
+        color: $color;
     }
 
     a:hover {
-        color: $color-text-highlight;
+        color: $color-text;
     }
 }
 

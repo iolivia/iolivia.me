@@ -35,21 +35,23 @@ export default () => (
         }
       `}
         render={data => (
-            <footer className={`${styles.footerContainer}`}>
+            <footer className={`${styles.footerContainer} ${styles.pattern}`}>
+                <div className={styles.innerContainer}>
 
-                <div className={styles.separatorBottomLight} />
+                    <div className={styles.separatorBottomLight} />
 
-                <div className={`${styles.footerInnerContainer} ${styles.innerContainer}`}>
+                    <div className={`${styles.footerInnerContainer} ${styles.innerContainer}`}>
 
-                    {/* Copyright */}
-                    <div className={styles.footerCopyrightSection}>
-                        {"Copyright 2018"}
+                        {/* Copyright */}
+                        <div className={styles.footerCopyrightSection}>
+                            {"Copyright 2018"}
+                        </div>
+
+                        {/* Social links */}
+                        <ul className={styles.footerSocialIconsSection}>
+                            {buildSocialLinks(data.site.siteMetadata.socialLinks)}
+                        </ul>
                     </div>
-
-                    {/* Social links */}
-                    <ul className={styles.footerSocialIconsSection}>
-                        {buildSocialLinks(data.site.siteMetadata.socialLinks)}
-                    </ul>
                 </div>
 
             </footer>
