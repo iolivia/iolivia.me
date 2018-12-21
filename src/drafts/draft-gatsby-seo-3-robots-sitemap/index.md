@@ -44,5 +44,8 @@ Add to the config.
       }
     }
 ```
+<<<<<<< HEAD
 
 PS: This got us to 30/30 on Website Grader.
+=======
+>>>>>>> 11420688acd5d908eb7d6dccbb8568bf820e5f3c
