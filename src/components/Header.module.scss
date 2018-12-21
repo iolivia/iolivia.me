@@ -31,6 +31,7 @@
 a.headerLogo {
     display: block;
     padding: 10px;
+    flex: 1 0 0;
 
     h1 {
         font-size: 35px;
@@ -41,9 +42,6 @@ a.headerLogo:hover {
   color: $color;
 }
 
-.headerInfo {
-
-    h4 {
-        margin-bottom: 10px;
-    }
+.headerNav {
+    flex: 2 0 0;
 }

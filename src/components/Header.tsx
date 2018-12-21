@@ -33,40 +33,22 @@ export default () => (
                         {/* Logo */}
                         <a className={styles.headerLogo} href="/">
                             <h1>
-                                {data.site.siteMetadata.settings.animationsEnabled
-                                    ?
-                                    <Random
-                                        text={data.site.siteMetadata.fullName}
-                                        iterations={1}
-                                        effect="fadeIn"
-                                        effectChange={2}
-                                        effectDirection="up"
-                                    />
-                                    : data.site.siteMetadata.fullName
-                                }
+                                {data.site.siteMetadata.fullName}
                             </h1>
                         </a>
-                        <div className={styles.separatorBottomLight} />
 
-                        {/* Header info */}
-                        <div className={styles.headerInfo} >
-
-                            {/* Title */}
-                            {/* <h4> {data.site.siteMetadata.title} </h4> */}
-
-                            {/* Tagline */}
-                            {/* <p> {data.site.siteMetadata.tagline}  </p> */}
-
-                            {/* Email */}
-                            {/* <a href={`mailto:${data.site.siteMetadata.email}`}>
-                                <p>
-                                    {data.site.siteMetadata.email}
-                                </p>
-                            </a> */}
-
+                        <div className={styles.headerNav}>
+                            <nav>
+                                <li> item 1 </li>
+                                <li> item 2 </li>
+                                <li> item 3 </li>
+                            </nav>
                         </div>
 
+                        <div className={styles.separatorBottomLight} />
+
                     </div>
+                    <div className={styles.separatorBottomLight} />
 
                 </div>
             </header>
