@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as styles from './Footer.module.scss'
 
 import { StaticQuery, graphql } from 'gatsby';
 
@@ -12,7 +11,7 @@ const buildSocialLinks = (linksData) => {
         const href = footerSocialLinks.get(key);
 
         links.push((
-            <li className={styles.footerSocialIconsItem}>
+            <li>
                 <a href={href} title={key} target="_blank">
                     <i className={`fab fa-${key} fa-lg`} />
                 </a>
@@ -35,23 +34,18 @@ export default () => (
         }
       `}
         render={data => (
-            <footer className={`${styles.footerContainer} ${styles.pattern}`}>
-                <div className={styles.innerContainer}>
+            <footer>
+                <div>
 
-                    <div className={styles.separatorBottomLight} />
-
-                    <div className={`${styles.footerInnerContainer} ${styles.innerContainer}`}>
-
-                        {/* Copyright */}
-                        <div className={styles.footerCopyrightSection}>
-                            {"Copyright 2018"}
-                        </div>
-
-                        {/* Social links */}
-                        <ul className={styles.footerSocialIconsSection}>
-                            {buildSocialLinks(data.site.siteMetadata.socialLinks)}
-                        </ul>
+                    {/* Copyright */}
+                    <div>
+                        {"Copyright 2018"}
                     </div>
+
+                    {/* Social links */}
+                    <ul>
+                        {buildSocialLinks(data.site.siteMetadata.socialLinks)}
+                    </ul>
                 </div>
 
             </footer>

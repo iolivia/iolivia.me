@@ -1,7 +1,5 @@
 import * as React from 'react'
-import * as styles from './Page.module.scss'
 
-import Banner from './Banner';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -10,13 +8,13 @@ export default class Page extends React.Component<{}, {}> {
     public render() {
 
         return (
-            <div className={styles.pageContainer}>
+            <div>
 
                 {/* Header */}
                 <Header />
 
                 {/* Main content */}
-                <div className={`${styles.pageInnerContainer} ${styles.innerContainer}`}>
+                <div>
                     {this.props.children}
                 </div>
 

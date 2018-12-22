@@ -1,10 +1,12 @@
 import * as React from 'react'
-import * as styles from './index.module.scss'
 
 import Page from '../components/Page';
 import PostPreview from '../components/PostPreview';
 import SEO from '../components/SEO';
 import { graphql } from 'gatsby'
+
+import * as styles from "./../styles.scss";
+import Layout from '../components/Layout';
 
 interface IndexPageProps {
   data: {
@@ -73,22 +75,66 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
     const siteMetadata = this.props.data.site.siteMetadata;
 
     return (
+      <Layout>
 
-      <Page>
+        <div className="container">
 
-        <SEO 
-          title={siteMetadata.title}
-          description={siteMetadata.description}
-        />
+          <div className="row">
+            <div className="one column">One</div>
+            <div className="eleven columns">Eleven</div>
+          </div>
 
-        <ul className={styles.postList}>
-          {this.buildPostList(posts)}
-        </ul>
+          <div className="row">
+            <div className="two columns">Two</div>
+            <div className="ten columns">Ten</div>
+          </div>
 
-      </Page>
-    )
+          <div className="row">
+            <div className="one-third column">1/3</div>
+            <div className="two-thirds column">2/3</div>
+          </div>
+          <div className="row">
+            <div className="one-half column">1/2</div>
+            <div className="one-half column">1/2</div>
+          </div>
+
+          <h1>Heading</h1>
+          <h2>Heading</h2>
+          <h3>Heading</h3>
+          <h4>Heading</h4>
+          <h5>Heading</h5>
+          <h6>Heading</h6>
+
+          <p>The base type is 15px over 1.6 line height (24px)</p>
+
+          <strong>Bolded</strong>
+          <em>Italicized</em>
+          <a>Colored</a>
+          <u>Underlined</u>
+
+        </div>
+      </Layout>
+    );
   }
 
+
+  // return (
+
+  //   <div className="container">
+  //     <Page >
+
+  //       <SEO
+  //         title={siteMetadata.title}
+  //         description={siteMetadata.description}
+  //       />
+
+  //       <ul>
+  //         {this.buildPostList(posts)}
+  //       </ul>
+
+  //     </Page>
+  //   </div>
+  // )
   private buildPostList = (posts: any[]) => {
     const postElements = [];
 

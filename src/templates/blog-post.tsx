@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as styles from './blog-post.module.scss'
 
 import { DiscussionEmbed } from "disqus-react";
 import Img from 'gatsby-image'
@@ -20,7 +19,7 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
 
     const siteMetadata = this.props.data.site.siteMetadata;
     const author = siteMetadata.fullName;
-    
+
     const disqusShortname = siteMetadata.settings.disqusShortName;
     const disqusConfig = {
       identifier: post.id,
@@ -30,61 +29,54 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
     return (
       <Page>
 
-        <SEO 
+        <SEO
           title={post.frontmatter.title || siteMetadata.title}
           description={post.excerpt || siteMetadata.description}
         />
 
-        <div className={styles.contentContainer}>
-          <div className={styles.postContainer}>
-
-            {/* Featured image */}
-            <div className={styles.postImage}>
-              <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />
-            </div>
-
-            {/* Title */}
-            <div className={styles.postTitle}>
-              <div className={styles.separatorTopDark} />
-              <h1>{post.frontmatter.title}</h1>
-              <div className={styles.separatorBottomDark} />
-            </div>
-
-            {/* Metadata */}
-            <div className={styles.postMetadata}>
-
-              {/* author and date */}
-              <div className={styles.author}>
-                by <a href="/">{author}</a> on {post.frontmatter.date}
-              </div>
-
-              {/* tags */}
-              <div className={styles.tags}>
-                <ul className={styles.tagsList}>
-                  {
-                    post.frontmatter.tags.map((tag, index) => {
-                      return (
-                        <li key={ index }>
-                          &nbsp;{" •"}&nbsp;
-                          {tag}
-                        </li>);
-                    })
-                  }
-                </ul>
-              </div>
-
-            </div>
-            <div className={styles.separatorBottomDark} />
-
-
-            {/* Content */}
-            <div className={styles.postContent}>
-              <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            </div>
-
-            {/* Disqus comments */}
-            <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        <div>
+          {/* Featured image */}
+          <div>
+            <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />
           </div>
+
+          {/* Title */}
+          <div>
+            <h1>{post.frontmatter.title}</h1>
+          </div>
+
+          {/* Metadata */}
+          <div>
+
+            {/* author and date */}
+            <div>
+              by <a href="/">{author}</a> on {post.frontmatter.date}
+            </div>
+
+            {/* tags */}
+            <div>
+              <ul>
+                {
+                  post.frontmatter.tags.map((tag, index) => {
+                    return (
+                      <li key={index}>
+                        &nbsp;{" •"}&nbsp;
+                          {tag}
+                      </li>);
+                  })
+                }
+              </ul>
+            </div>
+
+          </div>
+
+          {/* Content */}
+          <div>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          </div>
+
+          {/* Disqus comments */}
+          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
         </div>
 
       </Page>

@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as styles from './PostPreview.module.scss'
 
 import Img from 'gatsby-image'
 
@@ -17,9 +16,9 @@ export default class PostPreview extends React.Component<PostPreviewProps, {}> {
         const { imageSizes, title, excerpt, url, date } = this.props;
 
         return (
-            <a className={styles.postPreviewContainer} href={url}>
+            <a href={url}>
                 <Img sizes={imageSizes} />
-                <div className={styles.date}>
+                <div>
                     {date}
                 </div>
                 <h2>{title}</h2>

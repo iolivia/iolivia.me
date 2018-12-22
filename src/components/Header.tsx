@@ -24,33 +24,20 @@ export default () => (
       `}
         render={data => (
 
-            <header className={`${styles.headerContainer} ${styles.pattern}`}>
-                <div className={styles.innerContainer}>
+            <header>
 
-                    {/* Navigation */}
-                    <div className={styles.headerNavigation}>
+                {/* Logo */}
+                <h1>
+                    {data.site.siteMetadata.fullName}
+                </h1>
 
-                        {/* Logo */}
-                        <a className={styles.headerLogo} href="/">
-                            <h1>
-                                {data.site.siteMetadata.fullName}
-                            </h1>
-                        </a>
+                {/* Navigation */}
+                <nav>
+                    <li> item 1 </li>
+                    <li> item 2 </li>
+                    <li> item 3 </li>
+                </nav>
 
-                        <div className={styles.headerNav}>
-                            <nav>
-                                <li> item 1 </li>
-                                <li> item 2 </li>
-                                <li> item 3 </li>
-                            </nav>
-                        </div>
-
-                        <div className={styles.separatorBottomLight} />
-
-                    </div>
-                    <div className={styles.separatorBottomLight} />
-
-                </div>
             </header>
         )}
     />
