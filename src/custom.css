@@ -1,3 +1,9 @@
+@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
+
+body {
+  font-size: 1.7em;
+}
+
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-weight: 600;
@@ -17,6 +23,12 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
   left: 0;
 }
 
+:target {
+  padding-top: 130px;
+  margin-top: -100px;
+  display: inline-block;
+}
+
 a {
   text-decoration: none;
   color: #222;
@@ -24,4 +36,18 @@ a {
 
 a:hover {
   color: #f7484e;
+}
+
+ul {
+  list-style: none;
+}
+
+pre[class*="language-"] {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+code {
+  border: 0px;
 }

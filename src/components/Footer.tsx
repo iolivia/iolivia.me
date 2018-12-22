@@ -1,4 +1,5 @@
 import * as React from 'react'
+import styled from "styled-components"
 
 import { StaticQuery, graphql } from 'gatsby';
 
@@ -11,16 +12,43 @@ const buildSocialLinks = (linksData) => {
         const href = footerSocialLinks.get(key);
 
         links.push((
-            <li>
+            <FooterItem>
                 <a href={href} title={key} target="_blank">
                     <i className={`fab fa-${key} fa-lg`} />
                 </a>
-            </li>
+            </FooterItem>
         ));
     }
 
     return links;
 }
+
+const Footer = styled.footer`
+  display: block;
+  width: 100%;
+  height: 6.5rem;
+  background: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding-top: 15px;
+`;
+
+const FooterItem = styled.li`
+  position: relative;
+  float: left;
+  margin-bottom: 0;
+  margin-right: 15px;
+`
+
+const FooterItems = styled.ul`
+  list-style: none;
+  margin-bottom: 0; 
+  float: right;
+`
+
+const Copyright = styled.div`
+float: left;
+`
 
 export default () => (
     <StaticQuery
@@ -34,21 +62,17 @@ export default () => (
         }
       `}
         render={data => (
-            <footer>
-                <div>
+            <Footer>
+                <Copyright>
+                    Made with ❤️ in 2018
+                </Copyright>
 
-                    {/* Copyright */}
-                    <div>
-                        {"Copyright 2018"}
-                    </div>
+                {/* Social links */}
+                <FooterItems>
+                    {buildSocialLinks(data.site.siteMetadata.socialLinks)}
+                </FooterItems>
 
-                    {/* Social links */}
-                    <ul>
-                        {buildSocialLinks(data.site.siteMetadata.socialLinks)}
-                    </ul>
-                </div>
-
-            </footer>
+            </Footer>
         )}
     />
 )

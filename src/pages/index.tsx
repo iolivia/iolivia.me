@@ -7,6 +7,7 @@ import SEO from '../components/SEO';
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout';
+import Navigation from '../components/Navigation';
 
 interface IndexPageProps {
   data: {
@@ -68,47 +69,6 @@ export const indexPageQuery = graphql`
   }
 `
 
-const NavBar = styled.nav`
-  display: block;
-  width: 100%;
-  height: 6.5rem;
-  background: #fff;
-  z-index: 99;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-`;
-
-const NavBarLink = styled.a`
-  text-transform: uppercase;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .2rem;
-  margin-right: 35px;
-  text-decoration: none;
-  line-height: 6.5rem;
-  color: #222;
-
-  :hover {
-    color: #f7484e; 
-  }
-`;
-
-const NavBarItem = styled.li`
-  position: relative;
-  float: left;
-  margin-bottom: 0; 
-`
-
-const NavBarItems = styled.ul`
-  list-style: none;
-  margin-bottom: 0; 
-  float: right;
-`
-
-const MainContent = styled.div`
-padding-top: 100px;
-`;
-
 const SectionHeading = styled.h1`
   color: #f7484e;
 `;
@@ -133,21 +93,6 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
     return (
       <Layout>
 
-        <NavBar className="fixed">
-          <div className="container">
-
-            <NavBarLink href="#">olivia ifrim</NavBarLink>
-
-            <NavBarItems>
-              <NavBarItem><NavBarLink href="/#about">about</NavBarLink></NavBarItem>
-              <NavBarItem><NavBarLink href="/#blog">blog</NavBarLink></NavBarItem>
-              <NavBarItem><NavBarLink href="/#contact">contact</NavBarLink></NavBarItem>
-            </NavBarItems>
-          </div>
-        </NavBar>
-
-        <MainContent>
-
         <Section id="about" heading="About">
 
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -169,30 +114,11 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
         </Section>
-        </MainContent>
 
       </Layout>
     );
   }
 
-
-  // return (
-
-  //   <div className="container">
-  //     <Page >
-
-  //       <SEO
-  //         title={siteMetadata.title}
-  //         description={siteMetadata.description}
-  //       />
-
-  //       <ul>
-  //         {this.buildPostList(posts)}
-  //       </ul>
-
-  //     </Page>
-  //   </div>
-  // )
   private buildPostList = (posts: any[]) => {
     const postElements = [];
 

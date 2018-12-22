@@ -1,10 +1,11 @@
 import * as React from 'react'
+import styled from "styled-components"
 
 import { DiscussionEmbed } from "disqus-react";
 import Img from 'gatsby-image'
-import Page from '../components/Page';
 import SEO from '../components/SEO';
 import { graphql } from 'gatsby'
+import Layout from '../components/Layout';
 
 interface BlogPostTemplateProps {
   data: {
@@ -12,6 +13,37 @@ interface BlogPostTemplateProps {
     markdownRemark: MarkdownRemark
   }
 }
+
+const Center = styled.div`
+text-align: center;
+`
+
+const Title = styled.h1`
+  padding: 20px 30px 0 30px;
+`;
+
+const Date = styled.div`
+padding-bottom: 80px;
+`;
+
+const Tags = styled.ul`
+`;
+
+const Tag = styled.li`
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0;
+  margin-right: 15px;
+  color: white;
+  background-color: #f7484e;
+  padding: 2px 5px;
+  font-size: 0.8em;
+`
+
+const PostContent = styled.div`
+  width: 700px;
+  margin: 0 auto;
+`;
 
 class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
   render() {
@@ -27,59 +59,40 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
     };
 
     return (
-      <Page>
+      <Layout>
 
         <SEO
           title={post.frontmatter.title || siteMetadata.title}
           description={post.excerpt || siteMetadata.description}
         />
+        <PostContent>
 
-        <div>
-          {/* Featured image */}
-          <div>
+          <Center>
+
             <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />
-          </div>
 
-          {/* Title */}
-          <div>
-            <h1>{post.frontmatter.title}</h1>
-          </div>
+            <Title>{post.frontmatter.title}</Title>
 
-          {/* Metadata */}
-          <div>
 
-            {/* author and date */}
-            <div>
-              by <a href="/">{author}</a> on {post.frontmatter.date}
-            </div>
+            <Tags>
+              {
+                post.frontmatter.tags.map((tag, index) => {
+                  return (
+                    <Tag key={index}>{tag}</Tag>);
+                })
+              }
+            </Tags>
 
-            {/* tags */}
-            <div>
-              <ul>
-                {
-                  post.frontmatter.tags.map((tag, index) => {
-                    return (
-                      <li key={index}>
-                        &nbsp;{" •"}&nbsp;
-                          {tag}
-                      </li>);
-                  })
-                }
-              </ul>
-            </div>
+            <Date>{post.frontmatter.date}</Date>
 
-          </div>
+          </Center>
 
-          {/* Content */}
-          <div>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          </div>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
-          {/* Disqus comments */}
           <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
-        </div>
+        </PostContent>
 
-      </Page>
+      </Layout>
     );
   }
 }
