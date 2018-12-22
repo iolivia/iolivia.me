@@ -18,16 +18,16 @@ export default class IndexPage extends React.Component<{}, {}> {
       <Page>
 
         {/* Heading */}
-        <p className={styles.huge}>
+        <h1>
           404 - Not found
-          </p>
+          </h1>
 
         <h1>
           What you're looking for cannot be found. Search inside your soul.
           </h1>
 
         {/* Quotes */}
-        <div className={styles.quotes}>
+        <div>
           {this.buildQuotes()}
         </div>
 
