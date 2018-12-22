@@ -114,8 +114,7 @@ const SectionHeading = styled.h1`
 `;
 
 const SectionContainer = styled.div`
-  padding-top: 10px;
-  margin-bottom: 25px;
+  padding-top: 35px;
 `;
 
 const Section = props => (
@@ -140,9 +139,9 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
             <NavBarLink href="#">olivia ifrim</NavBarLink>
 
             <NavBarItems>
-              <NavBarItem><NavBarLink href="#about">about</NavBarLink></NavBarItem>
-              <NavBarItem><NavBarLink href="#blog">blog</NavBarLink></NavBarItem>
-              <NavBarItem><NavBarLink href="#contact">contact</NavBarLink></NavBarItem>
+              <NavBarItem><NavBarLink href="/#about">about</NavBarLink></NavBarItem>
+              <NavBarItem><NavBarLink href="/#blog">blog</NavBarLink></NavBarItem>
+              <NavBarItem><NavBarLink href="/#contact">contact</NavBarLink></NavBarItem>
             </NavBarItems>
           </div>
         </NavBar>
@@ -159,8 +158,10 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
         <Section id="blog" heading="Blog">
 
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        
+        <ul>
+          {this.buildPostList(posts)}
+        </ul>
+
         </Section>
 
         <Section id="contact" heading="Contact">
