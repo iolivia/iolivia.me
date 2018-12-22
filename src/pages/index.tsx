@@ -5,7 +5,6 @@ import PostPreview from '../components/PostPreview';
 import SEO from '../components/SEO';
 import { graphql } from 'gatsby'
 
-import * as styles from "./../styles.scss";
 import Layout from '../components/Layout';
 
 interface IndexPageProps {
@@ -77,42 +76,98 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
     return (
       <Layout>
 
-        <div className="container">
+        <nav className="navbar fixed">
+          <div className="container">
 
-          <div className="row">
-            <div className="one column">One</div>
-            <div className="eleven columns">Eleven</div>
+            <a className="navbar-link" href="#">olivia ifrim</a>
+
+            <ul className="navbar-list u-pull-right">
+              <li className="navbar-item"><a className="navbar-link" href="#about">about</a></li>
+              <li className="navbar-item"><a className="navbar-link" href="#blog">blog</a></li>
+              <li className="navbar-item"><a className="navbar-link" href="#contact">contact</a></li>
+            </ul>
           </div>
+        </nav>
 
-          <div className="row">
-            <div className="two columns">Two</div>
-            <div className="ten columns">Ten</div>
-          </div>
-
-          <div className="row">
-            <div className="one-third column">1/3</div>
-            <div className="two-thirds column">2/3</div>
-          </div>
-          <div className="row">
-            <div className="one-half column">1/2</div>
-            <div className="one-half column">1/2</div>
-          </div>
-
-          <h1>Heading</h1>
-          <h2>Heading</h2>
-          <h3>Heading</h3>
-          <h4>Heading</h4>
-          <h5>Heading</h5>
-          <h6>Heading</h6>
-
-          <p>The base type is 15px over 1.6 line height (24px)</p>
-
-          <strong>Bolded</strong>
-          <em>Italicized</em>
-          <a>Colored</a>
-          <u>Underlined</u>
-
+        <div className="row">
+          <div className="one column">One</div>
+          <div className="eleven columns">Eleven</div>
         </div>
+
+        <div className="row">
+          <div className="two columns">Two</div>
+          <div className="ten columns">Ten</div>
+        </div>
+
+        <div className="row">
+          <div className="one-third column">1/3</div>
+          <div className="two-thirds column">2/3</div>
+        </div>
+        <div className="row">
+          <div className="one-half column">1/2</div>
+          <div className="one-half column">1/2</div>
+        </div>
+
+        <h1>Heading</h1>
+        <h2>Heading</h2>
+        <h3>Heading</h3>
+        <h4>Heading</h4>
+        <h5>Heading</h5>
+        <h6>Heading</h6>
+
+        <p>The base type is 15px over 1.6 line height (24px)</p>
+
+        <strong>Bolded</strong>
+        <em>Italicized</em>
+        <a>Colored</a>
+        <u>Underlined</u>
+
+        <a className="button" href="#">Anchor button</a>
+        <button>Button element</button>
+        <input type="submit" value="submit input" />
+        <input type="button" value="button input" />
+
+        <a className="button button-primary" href="#">Anchor button</a>
+        <button className="button-primary">Button element</button>
+        <input className="button-primary" type="submit" value="submit input" />
+        <input className="button-primary" type="button" value="button input" />
+
+        <ul>
+          <li>Item 1</li>
+          <li>
+            Item 2
+            <ul>
+              <li>Item 2.1</li>
+              <li>Item 2.2</li>
+            </ul>
+          </li>
+          <li>Item 3</li>
+        </ul>
+
+        <table className="u-full-width">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Sex</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dave Gamache</td>
+              <td>26</td>
+              <td>Male</td>
+              <td>San Francisco</td>
+            </tr>
+            <tr>
+              <td>Dwayne Johnson</td>
+              <td>42</td>
+              <td>Male</td>
+              <td>Hayward</td>
+            </tr>
+          </tbody>
+        </table>
       </Layout>
     );
   }
