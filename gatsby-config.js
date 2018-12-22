@@ -90,6 +90,7 @@ module.exports = {
       options: {
         sitemap: 'https://iolivia.github.io/sitemap.xml'
       }
-    }
+    },
+    `gatsby-plugin-styled-components`
   ],
 }

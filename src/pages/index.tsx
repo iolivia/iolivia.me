@@ -1,4 +1,5 @@
 import * as React from 'react'
+import styled from "styled-components"
 
 import Page from '../components/Page';
 import PostPreview from '../components/PostPreview';
@@ -67,6 +68,63 @@ export const indexPageQuery = graphql`
   }
 `
 
+const NavBar = styled.nav`
+  display: block;
+  width: 100%;
+  height: 6.5rem;
+  background: #fff;
+  z-index: 99;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+`;
+
+const NavBarLink = styled.a`
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .2rem;
+  margin-right: 35px;
+  text-decoration: none;
+  line-height: 6.5rem;
+  color: #222;
+
+  :hover {
+    color: #f7484e; 
+  }
+`;
+
+const NavBarItem = styled.li`
+  position: relative;
+  float: left;
+  margin-bottom: 0; 
+`
+
+const NavBarItems = styled.ul`
+  list-style: none;
+  margin-bottom: 0; 
+  float: right;
+`
+
+const MainContent = styled.div`
+padding-top: 100px;
+`;
+
+const SectionHeading = styled.h1`
+  color: #f7484e;
+`;
+
+const SectionContainer = styled.div`
+  padding-top: 10px;
+  margin-bottom: 25px;
+`;
+
+const Section = props => (
+  <SectionContainer id={props.id}>
+    <SectionHeading>{props.heading}</SectionHeading>
+    {props.children}
+  </SectionContainer>
+);
+
 export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
   public render() {
@@ -76,98 +134,42 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
     return (
       <Layout>
 
-        <nav className="navbar fixed">
+        <NavBar className="fixed">
           <div className="container">
 
-            <a className="navbar-link" href="#">olivia ifrim</a>
+            <NavBarLink href="#">olivia ifrim</NavBarLink>
 
-            <ul className="navbar-list u-pull-right">
-              <li className="navbar-item"><a className="navbar-link" href="#about">about</a></li>
-              <li className="navbar-item"><a className="navbar-link" href="#blog">blog</a></li>
-              <li className="navbar-item"><a className="navbar-link" href="#contact">contact</a></li>
-            </ul>
+            <NavBarItems>
+              <NavBarItem><NavBarLink href="#about">about</NavBarLink></NavBarItem>
+              <NavBarItem><NavBarLink href="#blog">blog</NavBarLink></NavBarItem>
+              <NavBarItem><NavBarLink href="#contact">contact</NavBarLink></NavBarItem>
+            </NavBarItems>
           </div>
-        </nav>
+        </NavBar>
 
-        <div className="row">
-          <div className="one column">One</div>
-          <div className="eleven columns">Eleven</div>
-        </div>
+        <MainContent>
 
-        <div className="row">
-          <div className="two columns">Two</div>
-          <div className="ten columns">Ten</div>
-        </div>
+        <Section id="about" heading="About">
 
-        <div className="row">
-          <div className="one-third column">1/3</div>
-          <div className="two-thirds column">2/3</div>
-        </div>
-        <div className="row">
-          <div className="one-half column">1/2</div>
-          <div className="one-half column">1/2</div>
-        </div>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer 
+        took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        
+        </Section>
 
-        <h1>Heading</h1>
-        <h2>Heading</h2>
-        <h3>Heading</h3>
-        <h4>Heading</h4>
-        <h5>Heading</h5>
-        <h6>Heading</h6>
+        <Section id="blog" heading="Blog">
 
-        <p>The base type is 15px over 1.6 line height (24px)</p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        
+        </Section>
 
-        <strong>Bolded</strong>
-        <em>Italicized</em>
-        <a>Colored</a>
-        <u>Underlined</u>
+        <Section id="contact" heading="Contact">
 
-        <a className="button" href="#">Anchor button</a>
-        <button>Button element</button>
-        <input type="submit" value="submit input" />
-        <input type="button" value="button input" />
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-        <a className="button button-primary" href="#">Anchor button</a>
-        <button className="button-primary">Button element</button>
-        <input className="button-primary" type="submit" value="submit input" />
-        <input className="button-primary" type="button" value="button input" />
+        </Section>
+        </MainContent>
 
-        <ul>
-          <li>Item 1</li>
-          <li>
-            Item 2
-            <ul>
-              <li>Item 2.1</li>
-              <li>Item 2.2</li>
-            </ul>
-          </li>
-          <li>Item 3</li>
-        </ul>
-
-        <table className="u-full-width">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Age</th>
-              <th>Sex</th>
-              <th>Location</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Dave Gamache</td>
-              <td>26</td>
-              <td>Male</td>
-              <td>San Francisco</td>
-            </tr>
-            <tr>
-              <td>Dwayne Johnson</td>
-              <td>42</td>
-              <td>Male</td>
-              <td>Hayward</td>
-            </tr>
-          </tbody>
-        </table>
       </Layout>
     );
   }
