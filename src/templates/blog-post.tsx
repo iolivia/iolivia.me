@@ -42,6 +42,7 @@ const Tag = styled.li`
 
 const PostContent = styled.div`
   width: 700px;
+  max-width: 100%;
   margin: 0 auto;
 `;
 

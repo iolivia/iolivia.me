@@ -12,16 +12,22 @@ interface PostPreviewProps {
 }
 
 const Card = styled.div`
-  width: 85%;
-  height: 200px;
-  margin-bottom: 25px;
+width: 85%;
+height: 100%;
+min-height: 200px;
+margin-bottom: 25px;
+display: block;
 `
 
 const Thumbnail = styled.div`
-  width: 200px;
-  height: 200px;
-  float: left;
-  margin-right: 20px;
+width: 200px;
+height: 200px;
+float: left;
+margin-right: 20px;
+
+@media (max-width: 550px) {
+    display: none;
+}
 `
 
 const Title = styled.h2`
