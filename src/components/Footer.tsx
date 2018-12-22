@@ -31,6 +31,7 @@ const Footer = styled.footer`
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   padding-top: 15px;
+  margin-top: 25px;
 `;
 
 const FooterItem = styled.li`

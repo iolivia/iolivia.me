@@ -95,24 +95,41 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
         <Section id="about" heading="About">
 
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer 
-        took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        
+          <p>
+
+            Hi, I'm Olivia! I'm currently a Senior Software Engineer at&nbsp;
+          <a href="daisie.com">
+              Daisie
+          </a>
+            &nbsp;where I am designing and building the next generation of backend services for
+            our upcoming launch. Before this
+            I was helping ship Amazon Video to a bunch of TVs and set-top boxes, and even
+            before that I was building services for Office 365 at Microsoft. And even befooooore
+            that I was building games for kids at Xbox.
+          </p>
+          <p>
+            I love technology and I love creating software that lasts. I occasionaly speak at events
+            and run workshops.
+          </p>
         </Section>
 
         <Section id="blog" heading="Blog">
 
-        <ul>
-          {this.buildPostList(posts)}
-        </ul>
+          <ul>
+            {this.buildPostList(posts)}
+          </ul>
 
         </Section>
 
         <Section id="contact" heading="Contact">
 
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
+          If you'd like to reach out, please do so at&nbsp;
+        <strong>
+            <a href="mailto:olivia_github@outlook.com">
+              olivia_github@outlook.com
+          </a>
+          </strong>
+          .
         </Section>
 
       </Layout>
