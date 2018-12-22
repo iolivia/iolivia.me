@@ -1,13 +1,9 @@
 import * as React from 'react'
 import styled from "styled-components"
-
-import Page from '../components/Page';
-import PostPreview from '../components/PostPreview';
-import SEO from '../components/SEO';
 import { graphql } from 'gatsby'
 
+import PostPreview from '../components/PostPreview';
 import Layout from '../components/Layout';
-import Navigation from '../components/Navigation';
 
 interface IndexPageProps {
   data: {

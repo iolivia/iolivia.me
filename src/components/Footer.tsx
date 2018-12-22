@@ -24,27 +24,27 @@ const buildSocialLinks = (linksData) => {
 }
 
 const Footer = styled.footer`
-  display: block;
-  width: 100%;
-  height: 6.5rem;
-  background: #fff;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  padding-top: 15px;
-  margin-top: 25px;
+display: block;
+width: 100%;
+height: 6.5rem;
+background: #fff;
+border-top: 1px solid #eee;
+border-bottom: 1px solid #eee;
+padding-top: 15px;
+margin-top: 25px;
 `;
 
 const FooterItem = styled.li`
-  position: relative;
-  float: left;
-  margin-bottom: 0;
-  margin-right: 15px;
+position: relative;
+float: left;
+margin-bottom: 0;
+margin-right: 15px;
 `
 
 const FooterItems = styled.ul`
-  list-style: none;
-  margin-bottom: 0; 
-  float: right;
+list-style: none;
+margin-bottom: 0; 
+float: right;
 `
 
 const Copyright = styled.div`
