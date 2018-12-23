@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     fullName: 'olivia ifrim',
-    title: `olivia ifrim`,
+    title: `olivia ifrim - personal website and technology blog`,
     tagline: ``,
     email: `olivia_github@outlook.com`,
     socialLinks: [
@@ -16,7 +16,7 @@ module.exports = {
     description: `<p>
     
     Hi, I'm Olivia! I'm currently a Senior Software Engineer at
-  <a href="daisie.com">
+  <a href="https://daisie.com">
       Daisie
   </a>
     where I am designing and building the next generation of backend services for

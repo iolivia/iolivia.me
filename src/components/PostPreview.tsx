@@ -30,7 +30,7 @@ margin-right: 20px;
 }
 `
 
-const Title = styled.h2`
+const Title = styled.h3`
     margin-bottom: 5px;
 `
 
@@ -46,7 +46,7 @@ export default class PostPreview extends React.Component<PostPreviewProps, {}> {
         return (
             <Card>
                 <Thumbnail>
-                    <Img sizes={imageSizes} />
+                    <Img sizes={imageSizes} alt={title} title={title} />
                 </Thumbnail>
                 <a href={url}>
                     <Title>{title}</Title>

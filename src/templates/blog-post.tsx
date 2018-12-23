@@ -65,7 +65,9 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
         <SEO
           title={post.frontmatter.title || siteMetadata.title}
           description={post.excerpt || siteMetadata.description}
+          siteUrl={siteMetadata.siteUrl}
         />
+
         <PostContent>
 
           <Center>

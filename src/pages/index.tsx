@@ -13,6 +13,7 @@ interface IndexPageProps {
         logo: string,
         title: string,
         description: string,
+        siteUrl: string,
         tagline: string,
         footerLinks: Map<string, string>,
         socialLinks: Map<string, string>,
@@ -41,6 +42,7 @@ export const indexPageQuery = graphql`
       siteMetadata {
           title
           description
+          siteUrl
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -67,7 +69,7 @@ export const indexPageQuery = graphql`
   }
 `
 
-const SectionHeading = styled.h1`
+const SectionHeading = styled.h2`
   color: #f7484e;
 `;
 
@@ -91,10 +93,7 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
     return (
       <Layout>
 
-        <SEO
-          title={siteMetadata.title}
-          description={siteMetadata.description}
-        />
+        <SEO {...siteMetadata} />
 
         <Section id="about" heading="About">
           <div dangerouslySetInnerHTML={{ __html: siteMetadata.description }} />
