@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     fullName: 'olivia ifrim',
-    title: `Senior Software Engineer`,
+    title: `olivia ifrim`,
     tagline: ``,
     email: `olivia_github@outlook.com`,
     socialLinks: [
@@ -13,7 +13,33 @@ module.exports = {
       animationsEnabled: false,
       disqusShortName: "oliviaifrim"
     },
-    description: `London based technology blog covering design, architecture, best practices, react and advanced data structures and algorithms.`,
+    description: `<p>
+    
+    Hi, I'm Olivia! I'm currently a Senior Software Engineer at
+  <a href="daisie.com">
+      Daisie
+  </a>
+    where I am designing and building the next generation of backend services for
+    our upcoming launch. Before this
+    I was helping ship
+  <a href="https://www.primevideo.com/">
+    Amazon Video
+  </a>
+ to a bunch of TVs and set-top boxes, and even
+    before that I was building services for
+  <a href="https://docs.microsoft.com/en-us/graph/overview">
+    Office 365 at Microsoft
+  </a>
+  . And even befooooore
+    that I was building games for kids at 
+  <a href="https://www.metacritic.com/game/xbox-360/kinect-sesame-street-tv">
+    Xbox.
+  </a>
+  </p>
+  <p>
+    I love technology and I love creating software that lasts. I occasionaly speak at events
+    and run workshops.
+  </p>`,
     siteUrl: `http://iolivia.me`
   },
   plugins: [

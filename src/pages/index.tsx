@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { graphql } from 'gatsby'
 
 import PostPreview from '../components/PostPreview';
+import SEO from '../components/SEO';
 import Layout from '../components/Layout';
 
 interface IndexPageProps {
@@ -11,6 +12,7 @@ interface IndexPageProps {
       siteMetadata: {
         logo: string,
         title: string,
+        description: string,
         tagline: string,
         footerLinks: Map<string, string>,
         socialLinks: Map<string, string>,
@@ -89,24 +91,13 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
     return (
       <Layout>
 
+        <SEO
+          title={siteMetadata.title}
+          description={siteMetadata.description}
+        />
+
         <Section id="about" heading="About">
-
-          <p>
-
-            Hi, I'm Olivia! I'm currently a Senior Software Engineer at&nbsp;
-          <a href="daisie.com">
-              Daisie
-          </a>
-            &nbsp;where I am designing and building the next generation of backend services for
-            our upcoming launch. Before this
-            I was helping ship Amazon Video to a bunch of TVs and set-top boxes, and even
-            before that I was building services for Office 365 at Microsoft. And even befooooore
-            that I was building games for kids at Xbox.
-          </p>
-          <p>
-            I love technology and I love creating software that lasts. I occasionaly speak at events
-            and run workshops.
-          </p>
+          <div dangerouslySetInnerHTML={{ __html: siteMetadata.description }} />
         </Section>
 
         <Section id="blog" heading="Blog">

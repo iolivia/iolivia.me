@@ -25,10 +25,18 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
 
 a {
   text-decoration: none;
+  color: #f7484e;
+}
+
+a h2 {
   color: #222;
 }
 
 a:hover {
+  color: #222;
+}
+
+a:hover h1, h2, h3, h4, h5, h6 {
   color: #f7484e;
 }
 
