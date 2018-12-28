@@ -5,6 +5,7 @@ module.exports = {
     tagline: ``,
     email: `olivia_github@outlook.com`,
     socialLinks: [
+      ["twitter", "https://twitter.com/oliviff"],
       ["linkedin", "https://www.linkedin.com/in/oliviaifrim/"],
       ["github", "https://github.com/iolivia"],
       ["quora", "https://www.quora.com/profile/Olivia-Ifrim"],
