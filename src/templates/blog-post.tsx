@@ -44,6 +44,11 @@ const PostContent = styled.div`
   width: 700px;
   max-width: 100%;
   margin: 0 auto;
+
+  ul {
+    list-style-type: square;
+    padding-left: 20px;
+  }
 `;
 
 class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
