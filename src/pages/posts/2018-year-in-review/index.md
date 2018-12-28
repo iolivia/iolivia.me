@@ -1,9 +1,9 @@
 ---
 title:  "2018 year in review"
 date:   2018-12-28 00:00:00
+categories: [review]
+tags: [year in review, '2018', review, life retrospective]
 featuredImage: "./clocks.jpg"
-categories: []
-tags: [year in review, 2018, review, life retrospective]
 ---
 
 I've been reading a couple of year in review blog posts these days and I got inspired to write my own. 2018 has been a great year and it's worth looking back and analyzing what made it so great. 
