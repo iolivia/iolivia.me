@@ -320,4 +320,4 @@ KTHXBYE
 * Functional, declarative and low-level languages are fundamentally different from the rest and programming in them requires a complete mind shift (like operating on a list in haskell using recursion instead of a loop, or moving the register pointer around in brainfuck)
 * Language syntax has evolved somewhat from verbose to implicit and elegant (not sure if that is a good or bad thing, probably neither)
 
-And if you'are after the code, it's all on [github](https://github.com/iolivia/fizzbuzz). Let me know what you thought of my FizzBuzz challenge and if you want to make your own and/or contribute to the repo let me know!
+And if you'are after the code, it's all on [github](https://github.com/iolivia/fizzbuzz). Let me know what you thought of my FizzBuzz challenge and if you want to make your own and/or contribute to the rep let me know!
