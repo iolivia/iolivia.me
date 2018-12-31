@@ -73,7 +73,6 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
           description={post.excerpt || siteMetadata.description}
           siteUrl={siteMetadata.siteUrl}
           twitterHandle={siteMetadata.twitterHandle}
-          imageUrl={featuredImage.sizes.srcSet}
         />
 
         <PostContent>
