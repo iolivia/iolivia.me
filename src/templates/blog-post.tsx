@@ -73,7 +73,7 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
           description={post.excerpt || siteMetadata.description}
           siteUrl={siteMetadata.siteUrl}
           twitterHandle={siteMetadata.twitterHandle}
-          imageUrl={featuredImage.sizes.srcSet}
+          imageUrl={featuredImage.src}
         />
 
         <PostContent>
@@ -129,10 +129,10 @@ export const pageQuery = graphql`
         tags
         featuredImage {
           childImageSharp{
-            sizes(maxWidth: 700, maxHeight: 300) {
+            fluid(maxWidth: 700, maxHeight: 300) {
               src
               srcSet
-              ...GatsbyImageSharpSizes
+              sizes
             }
           }
         }
