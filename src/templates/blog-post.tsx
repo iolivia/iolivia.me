@@ -63,7 +63,7 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
       title: post.frontmatter.title,
     };
 
-    const imageSizes = post.frontmatter.featuredImage.childImageSharp.sizes;
+    const featuredImage = post.frontmatter.featuredImage.childImageSharp;
 
     return (
       <Layout>
@@ -73,14 +73,14 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
           description={post.excerpt || siteMetadata.description}
           siteUrl={siteMetadata.siteUrl}
           twitterHandle={siteMetadata.twitterHandle}
-          imageSizes={imageSizes}
+          imageUrl={featuredImage.sizes.srcSet}
         />
 
         <PostContent>
 
           <Center>
 
-            <Img sizes={imageSizes} />
+            <Img sizes={featuredImage.sizes} />
 
             <Title>{post.frontmatter.title}</Title>
 
@@ -130,6 +130,8 @@ export const pageQuery = graphql`
         featuredImage {
           childImageSharp{
             sizes(maxWidth: 700, maxHeight: 300) {
+              src
+              srcSet
               ...GatsbyImageSharpSizes
             }
           }
