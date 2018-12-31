@@ -228,7 +228,7 @@ Wow. I spent a good afternoon on this and I solved like 80% of the problem. 1435
 
 The best part though, in a normal language when you are stuck on something, you can easily google around for an answer. You look at some snippet of code and you're like: ah, I get it now. I was so silly. Doing the same for brainfuck just doesn't work. You look at how to do a modulus, you see `[>+>->+<[>]>[<+>-]<<[<]>-]` and you're like: well, I (still) don't get it. 
 
-But it was fun! It also peaked my interest into the [esoteric languages](https://en.wikipedia.org/wiki/Esoteric_programming_language). Shakespeare and Chef also sounded interesting but didn't get to those yet. 
+But it was fun! It also piqued my interest into the [esoteric languages](https://en.wikipedia.org/wiki/Esoteric_programming_language). Shakespeare and Chef also sounded interesting but didn't get to those yet. 
 
 ##bash
 I needed a quick break to keep me going after the brainfuck adventure and bash did the trick. Ugly syntax if you ask me but overall nothing special or unexpected.
@@ -313,7 +313,7 @@ KTHXBYE
 ##what have I learnt
 10 languages and a couple of afternoons later, what have I learnt? 
 * I genuinely enjoy writing code even for the sake of writing code
-* Most languages that we use every day really aren't that different from eachother on a fundamental syntax level, they all have for loops and ifs and variables, etc.
+* Most languages that we use every day really aren't that different from each other on a fundamental syntax level, they all have for loops and ifs and variables, etc.
 * Functional, declarative and low-level languages are fundamentally different from the rest and programming in them requires a complete mind shift (like operating on a list in haskell using recursion instead of a loop, or moving the register pointer around in brainfuck)
 * Language syntax has evolved somewhat from verbose to implicit and elegant (not sure if that is a good or bad thing, probably neither)
 
