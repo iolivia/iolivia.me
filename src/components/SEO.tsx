@@ -22,7 +22,7 @@ export default class SEO extends React.Component<SEOProps, {}> {
 
         const { description, title, siteUrl, twitterHandle, imageUrl } = this.props;
         const defaultImage = "https://via.placeholder.com/200/e55655/FFFFFF/?text=iolivia.me";
-        const image = imageUrl ? imageUrl : defaultImage;
+        const image = defaultImage;
 
         return (
             <div>
