@@ -22,6 +22,7 @@ export default class SEO extends React.Component<SEOProps, {}> {
 
         const { description, title, siteUrl, twitterHandle, imageUrl } = this.props;
         const defaultImage = "https://via.placeholder.com/200/e55655/FFFFFF/?text=iolivia.me";
+        const image = imageUrl ? imageUrl : defaultImage;
 
         return (
             <div>
@@ -38,7 +39,13 @@ export default class SEO extends React.Component<SEOProps, {}> {
                         { name: 'twitter:site', content: twitterHandle },
                         { name: 'twitter:title', content: title },
                         { name: 'twitter:description', content: description },
-                        { name: 'twitter:image', content: imageUrl ? imageUrl : defaultImage }
+                        { name: 'twitter:image', content: image },
+
+                        // Linkedin card 
+                        { name: 'og:title', content: title },
+                        { name: 'og:image', content: image },
+                        { name: 'og:description', content: description },
+                        { name: 'og:url', content: '' },
                     ]}
                     title={title}
 
