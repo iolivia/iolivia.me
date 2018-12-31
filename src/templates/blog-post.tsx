@@ -63,6 +63,8 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
       title: post.frontmatter.title,
     };
 
+    const imageSizes = post.frontmatter.featuredImage.childImageSharp.sizes;
+
     return (
       <Layout>
 
@@ -71,13 +73,14 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
           description={post.excerpt || siteMetadata.description}
           siteUrl={siteMetadata.siteUrl}
           twitterHandle={siteMetadata.twitterHandle}
+          imageSizes={imageSizes}
         />
 
         <PostContent>
 
           <Center>
 
-            <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />
+            <Img sizes={imageSizes} />
 
             <Title>{post.frontmatter.title}</Title>
 

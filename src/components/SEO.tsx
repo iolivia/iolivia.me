@@ -12,13 +12,16 @@ interface SEOProps {
     description: string;
     title: string;
     siteUrl: string;
+    twitterHandle: string;
+    imageSizes?: object;
 }
 
 export default class SEO extends React.Component<SEOProps, {}> {
 
     public render() {
 
-        const { description, title, siteUrl, twitterHandle } = this.props;
+        const { description, title, siteUrl, twitterHandle, imageSizes } = this.props;
+        const defaultImage = "https://via.placeholder.com/150/e55655/FFFFFF/?text=iolivia.me";
 
         return (
             <div>
@@ -35,6 +38,7 @@ export default class SEO extends React.Component<SEOProps, {}> {
                         { name: 'twitter:site', content: twitterHandle },
                         { name: 'twitter:title', content: title },
                         { name: 'twitter:description', content: description },
+                        { name: 'twitter:image', content: imageSizes ? imageSizes : defaultImage }
                     ]}
                     title={title}
 
