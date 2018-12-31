@@ -56,7 +56,6 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
     const post = this.props.data.markdownRemark;
 
     const siteMetadata = this.props.data.site.siteMetadata;
-    const author = siteMetadata.fullName;
 
     const disqusShortname = siteMetadata.settings.disqusShortName;
     const disqusConfig = {
@@ -71,6 +70,7 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
           title={post.frontmatter.title || siteMetadata.title}
           description={post.excerpt || siteMetadata.description}
           siteUrl={siteMetadata.siteUrl}
+          twitterHandle={siteMetadata.twitterHandle}
         />
 
         <PostContent>
@@ -80,7 +80,6 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
             <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />
 
             <Title>{post.frontmatter.title}</Title>
-
 
             <Tags>
               {
@@ -114,6 +113,7 @@ export const pageQuery = graphql`
         settings {
           disqusShortName
         }
+        twitterHandle
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

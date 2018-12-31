@@ -18,7 +18,7 @@ export default class SEO extends React.Component<SEOProps, {}> {
 
     public render() {
 
-        const { description, title, siteUrl } = this.props;
+        const { description, title, siteUrl, twitterHandle } = this.props;
 
         return (
             <div>
@@ -26,7 +26,16 @@ export default class SEO extends React.Component<SEOProps, {}> {
                 {/* Helmet */}
                 <Helmet
                     htmlAttributes={{ lang: 'en' }}
-                    meta={[{ name: 'description', content: description }]}
+                    meta={[
+                        // General
+                        { name: 'description', content: description },
+
+                        // Twitter card
+                        { name: 'twitter:card', content: "summary" },
+                        { name: 'twitter:site', content: twitterHandle },
+                        { name: 'twitter:title', content: title },
+                        { name: 'twitter:description', content: description },
+                    ]}
                     title={title}
 
                     link={[

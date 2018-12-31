@@ -4,6 +4,7 @@ module.exports = {
     title: `olivia ifrim - personal website and technology blog`,
     tagline: ``,
     email: `olivia_github@outlook.com`,
+    twitterHandle: "@oliviff",
     socialLinks: [
       ["twitter", "https://twitter.com/oliviff"],
       ["linkedin", "https://www.linkedin.com/in/oliviaifrim/"],
