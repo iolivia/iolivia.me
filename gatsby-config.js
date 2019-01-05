@@ -13,7 +13,8 @@ module.exports = {
     ],
     settings: {
       animationsEnabled: false,
-      disqusShortName: "oliviaifrim"
+      disqusShortName: "oliviaifrim",
+      disqusEnabled: false
     },
     description: `<p>
     

@@ -98,7 +98,17 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
 
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
-          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+          {
+            siteMetadata.settings.disqusEnabled
+              ? <DiscussionEmbed
+                shortname={disqusShortname}
+                config={disqusConfig} />
+              : <div>
+                <hr />
+                <p><a href={`https://twitter.com/${siteMetadata.twitterHandle}`}>Tweet</a> about this post.</p>
+              </div>
+          }
+
         </PostContent>
 
       </Layout>
@@ -114,6 +124,7 @@ export const pageQuery = graphql`
         fullName
         settings {
           disqusShortName
+          disqusEnabled
         }
         twitterHandle
       }
