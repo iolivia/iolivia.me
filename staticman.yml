@@ -1,0 +1,17 @@
+comments:
+  allowedFields: ["author", "content", "email", "parent_id", "permalink", "site"]
+  branch: "master-src"
+  commitMessage: "add [comment]: by {fields.author} <Staticman>\n\n{fields.permalink}#comment-{@id}"
+  filename: "{@id}"
+  format: "yaml"
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: "timestamp"
+  moderation: false
+  name: "iolivia.me"
+  path: "data/comments/{options.postId}"
+  requiredFields: ["author", "content", "email", "permalink"]
+  transforms:
+    email: md5
