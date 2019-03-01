@@ -49,6 +49,10 @@ const PostContent = styled.div`
     list-style-type: square;
     padding-left: 20px;
   }
+
+  img {
+    width: 100%;
+  }
 `;
 
 class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {

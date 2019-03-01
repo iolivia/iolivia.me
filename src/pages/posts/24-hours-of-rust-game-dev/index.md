@@ -112,7 +112,25 @@ impl event::EventHandler for MainState {
 At this point `main.rs` was the place to be, because every single line of code was there, so I spent some time breaking that up into separate files and rationalizing the directory structure a bit. 
 
 ### People, floors and images
-The next big milestone was creating a `Person` game object and loading images.
+The next big milestone was creating a `Person` game object and loading images. I decided everything will be tile based (currently 32x32 tiles).
 
 ![alt text](./1.png "People, floors and images")
+
+### Tennis courts
+I spent some time looking at images of tennis courts online and I figured I'd want my tennis court to be 4*2 tiles. I would make an image that wide, or I could have 8 separate tiles. On further inspection I actually realized I only need 2 unique tiles to build the whole court. Let me explain. 
+
+2 unique tiles: 1 and 2. 
+
+Each section of the court is actually made up of either tile 1 or tile 2, either as is or rotated 180 degrees. 
+
+![alt text](./tennis_court.png "Constructing a tennis court")
+
+### A terrible build mode
+Now that I could render floors, people and courts I figured I needed a basic build mode. I made it so that when a key was pressed, an object was selected and click would then place that type of object. For example, pressing 1 would give you a court and pressing 2 would give you a person.
+
+That wasn't super useful as you needed to remember what 1 or 2 were, so I added a build-mode wireframe so you could at least know what object you had. 
+
+![alt text](./wireframes.gif "Wireframes")
+
+
 
