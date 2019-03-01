@@ -3,7 +3,7 @@ title:  "24 hours of game development in Rust"
 date:   2019-03-01 00:00:00
 categories: []
 tags: ['game dev', 'rust']
-featuredImage: "./design.jpg"
+featuredImage: "./game.png"
 ---
 
 In this post I'll talk about a small game I've been developing in about 24 hours in total (mostly in a few hour blocks during evenings or weekends). The game is far from finished, but I thought I'd write up about my experience so far, what I've learnt and some interesting observations about building a game from scratch-ish and doing it in Rust. 
@@ -28,6 +28,8 @@ I did a little research on Rust game engines and was left with two main contende
 I then spent a bit of time thinking about the game. The first step would be to have some floor on the screen, then some people, then some courts. Eventually, we'll need to assign people to courts, have them move there and waaay in the future, the people would have skills which would improve the more they play. There would need to be a sort of build mode so you can add people and courts and eventually all this would cost money.
 
 At this point I felt like I had enough ideas to start coding. (being PM and dev is quite fun! I'd still rather have a PM though ..)
+
+## Making the game
 
 ### The beginnings: circles and abstraction
 I pretty much ripped off a ggez sample and got a window with a circle in it up on the screen. Amazing! Next, some abstraction. I thought it would be a good idea to abstract the idea of a game object. Every game object can be rendered and updated, something like this (if you're rolling your eyes at this point, this was before I found out about ECS, so bear with me here). 
@@ -169,4 +171,30 @@ src
 -- main.rs -> main loop 
 ```
 
+### Assigning people to courts
 
+After moving to ECS everything became relatively easy. I now had a systematic way of adding data to my entities and adding logic based on that data. This allowed me to very easily get the behaviour of assigning people to courts. 
+
+What I did:
+- add data about assigned courts to `Person`
+- add data about assigned people to `TennisCourt`
+- add a `CourtChoosingSystem` which iterates through people and courts, finds available courts and assigns them to people. Easy!
+- add a `PersonMovementSystem` which iterates through people which have courts assigned to them and makes them move to the position of the courts (if they are not already there)
+
+See it in action here.
+
+![alt text](./people_to_courts.gif "People going to courts")
+
+## Wrapping up
+
+I had a really great time making this small game. But I especially had a great time writing so much Rust because:
+- Rust makes doing the right thing easy 
+- It's very elegant and has great documentation
+- Immutability by default is absolutely beautiful, it forces you to be explicit about mutability which makes you aware of how your data is being modified
+- No awkward moving, cloning or copying (like I found myself doing a lot in C++)
+- Options are really fantastic to work with and they make handling errors a thing of beauty
+- If it compiles, it 99% of the time works as you expected and compiler errors are probably the best I've ever seen
+
+In terms of Rust game development, I think it's still early days, but I see a great community actively working towards making Rust more accessible to game developers. So I am optimistic about the next few years and I cannot wait to see how it evolves. 
+
+Did you enjoy this post? Let me know, so I can write more!
