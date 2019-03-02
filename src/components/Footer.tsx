@@ -65,7 +65,7 @@ export default () => (
         render={data => (
             <Footer>
                 <Copyright>
-                    Made with ❤️ in 2018
+                    Made with ❤️ in 2018-2019
                 </Copyright>
 
                 {/* Social links */}
