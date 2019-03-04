@@ -1,5 +1,5 @@
 ---
-title:  "Entity component system (ECS) explained"
+title:  "Entity component system (ECS) explained with tennis players and courts"
 date:   2019-03-03 00:00:00
 categories: []
 tags: ['game dev', 'rust', 'ecs']
