@@ -338,76 +338,60 @@ The key bit here is also that we are not rendering based on entity type, but we 
 
 The other system we care about is how people get assigned to courts. Again for this system we only need to care about: people, courts and positions.
 
+We find all available courts, we find all people that don't have courts and we match them up. I won't include the code because it needs a bit of tidying up but hopefully you get the gist. 
+
+#### Path finding
+
+Once we've assigned a court and a court position to each player, we need to make them move there. This is a greedy style path finding, we just try to get closer at very step in the direction of our desired position. 
+
 ```rust
-// This is the system which matches people with available courts
-impl<'a> System<'a> for CourtChoosingSystem {
-    // Again, the type of data that this system uses.
+impl<'a> System<'a> for PersonMovementSystem {
     type SystemData = (
-        Entities<'a>,
-        WriteStorage<'a, Person>,
-        WriteStorage<'a, TennisCourt>,
-        WriteStorage<'a, Position>,
+      ReadStorage<'a, Person>, 
+      WriteStorage<'a, Position>
     );
 
     fn run(&mut self, data: Self::SystemData) {
-        let (entities, mut people, mut tennis_courts, positions) = data;
+        let (people, mut positions) = data;
 
-        // Find available courts
-        let mut available_court_entities = Vec::<Entity>::new();
-        for entity in entities.join() {
-            let tennis_court = tennis_courts.get(entity);
+        for (person, position) in (&people, &mut positions).join() {
+            match (person.assigned_court, &person.assigned_court_position) {
+                (Some(_), Some(court_position)) => {
+                    // Calculate some stuff
+                    let x_distance = (court_position.x - position.x) / TILE_WIDTH;
+                    let y_distance = (court_position.y - position.y) / TILE_WIDTH;
+                    let mut x_direction = 1.0;
+                    let mut y_direction = 1.0;
+                    if x_distance < 0.0 {
+                        x_direction = -1.0;
+                    }
+                    if y_distance < 0.0 {
+                        y_direction = -1.0;
+                    }
 
-            if tennis_court.is_some() {
-                if tennis_court.unwrap().assigned_people < 2 {
-                    available_court_entities.push(entity);
-                }
-            }
-        }
+                    // Check if we are there
+                    if x_distance == 0.0 && y_distance == 0.0 {
+                        continue;
+                    }
 
-        // Assign courts to people
-        for entity in entities.join() {
-            let person = people.get_mut(entity);
-
-            if available_court_entities.len() == 0 {
-                return;
-            }
-            
-            match person {
-                Some(p) => {
-                    if p.assigned_court.is_none() && available_court_entities.len() > 0 {
-                        // get the entity, court and position
-                        let available_court_entity = *available_court_entities.get(0).unwrap();
-                        let available_court =
-                            tennis_courts.get_mut(available_court_entity).unwrap();
-                        let mut available_court_position =
-                            positions.get(available_court_entity).unwrap().clone();
-                        // Adding the person to the court
-                        available_court.assigned_people += 1;
-                        // Adding the court to the person
-                        p.assigned_court = Some(available_court_entity);
-                        match available_court.assigned_people {
-                            2 => {
-                                available_court_position.x += TILE_WIDTH * 3.0;
-                                available_court_entities.pop();
-                            }
-                            _ => (),
-                        }
-                        p.assigned_court_position = Some(available_court_position);
-
-                        println!(
-                            "CourtChoosingSystem: assigned court {} to person {}",
-                            available_court_entity.id(),
-                            entity.id(),
-                        );
+                    // If we're not there yet, go with the highest distance first
+                    if x_distance.abs() > y_distance.abs() {
+                        position.x += TILE_WIDTH * x_direction;
+                    } else {
+                        position.y += TILE_WIDTH * y_direction;
                     }
                 }
-                None => (),
+                (_, _) => (),
             }
         }
     }
 }
 ```
 
+## Wrapping up
 
+And there you have it: components, entities and systems explained with a real world example. Hopefully this demystifies ECS a little and helps you understand how you would use it yourself. 
+
+Got some questions? Want me to write more? Let me know!
 
 
