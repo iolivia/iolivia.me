@@ -198,3 +198,5 @@ I had a really great time making this small game. But I especially had a great t
 In terms of Rust game development, I think it's still early days, but I see a great community actively working towards making Rust more accessible to game developers. So I am optimistic about the next few years and I cannot wait to see how it evolves. 
 
 Did you enjoy this post? Let me know, so I can write more!
+
+PS: If you are interested in learning more about ECS, check out [ECS explained with tennis courts and people](/posts/entity-component-system-explained/), my follow-up post.
