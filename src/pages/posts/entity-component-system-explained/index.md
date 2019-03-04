@@ -6,38 +6,41 @@ tags: ['game dev', 'rust', 'ecs']
 featuredImage: "./tennis.jpg"
 ---
 
-In the last post I talked about a small game I built in Rust and roughly how far I got in 24 hours. One of the biggest challenges I had was finding the right architecture where things would be easy to build and any new feature should have clear steps on what patterns to combine to achive it. I started off with a basic inheritance model until I realized that was The Wrong Thing TM and switched to an Entity component system architecture (or ECS as it's most commonly referred to). I didn't find ECS immediately intuitive and I struggled a bit to think in ECS, so I figured I'd write a short post about my current setup and how I got myself to think more ECS and less in a traditional OOP way. I'll be using ggez and specs.
+[In the last post](/posts/24-hours-of-rust-game-dev/) I talked about a small game I built in Rust and roughly how far I got in 24 hours. One of the biggest challenges I had was finding the right architecture. 
+
+I started off with a basic inheritance model until I realized that was *The Wrong Thing <sup>TM</sup>* and switched to an **Entity component system architecture** (or ECS). I didn't find ECS immediately intuitive and I struggled a bit to think in ECS, so I figured I'd write a short post about it in case it helps anyone else facing the same challenges. 
+
+I'll be using ggez and specs, but to be honest it doesn't matter too much, the same principles will apply to any ECS implementation although the details might be slightly different.
 
 ## ECS overview
-So what is ECS? [ECS - Entity Component System](https://en.wikipedia.org/wiki/Entity_component_system) is a type of architecture and the gist of it is:
-* separate data from logic
-* composition over inheritance
-* data oriented design
-
 In ECS terminology you have these 3 basic concepts:
-- Entities: this is just a type of a thing referenced with an identifier (like a Player, Ball, etc.)
-- Components: these are what your entities are made up of. For example, you can have a Renderable component, a Position component, etc. This is purely data storage.
-- Systems: systems use entities and components and contain behaviour and logic based on that data. For example, you could have a rendering system which just iterates through all entities which contain renderable components and draws all of them.
+- **Entities**: this is just a type of a thing referenced with an identifier (like a Player, Ball, etc.)
+- **Components**: these are what your entities are made up of. For example, you can have a Renderable component, a Position component, etc. This is purely data storage.
+- **Systems**: systems use entities and components and contain behaviour and logic based on that data. For example, you could have a rendering system which just iterates through all entities which contain renderable components and draws all of them.
+
+The whole idea is separating behaviour from logic, so all the data goes in components and all the behaviour goes into systems.
 
 If it doesn't make sense yet, hang in there because a real example is coming.
 
 ## ECS in practice
 
-So let's talk a specific example. If you didn't read my previous post I'll just quickly describe what I was trying to achieve with this game. See it in action below.
+So let's talk a specific example. I'm building a simple tennis simulation/management game, think like a mix of Cities Skylines with a bit of Prison architect, but about tennis. The idea is pretty simple: you have players and you have tennis courts, and you want to assign people to courts and have them go there and play. See it in action below.
 
 ![alt text](./people_to_courts.gif "People going to courts")
 
-So I wanted a few things:
-- a floor, which is pretty much static and doesn't do anything
-- people, which are tennis players
+So we'll need:
+- floors
+- people
 - tennis courts
-- people should find an available tennis court
-- people that have an assigned tennis court should travel to said court
+
+And then we will also need the following behaviours:
+- a person needs to find an available tennis court
+- a person with an assigned tennis court needs to travel to that court
 
 And here is how that works in ECS terms. Let's start with components.
 
 ### Components
-So components are basically the simplest smallest piece of data that makes sense on its own (think an atom) and entities are just a composition of a lot of components. So let's try to break this down. 
+So components are basically the simplest smallest piece of data that makes sense on its own (think an atom). So let's try to break this down. 
 
 We need:
 1. a way to assign an image or a list of images to an entity: for example, the court is made up of 8 images and the person is made up of 1 image
@@ -71,14 +74,12 @@ impl Position {
 #### Images 
 For handling images, I decided to break this down into two components (although I'm not entirely convinced now that that was a good idea now), but here is how I thought about it. 
 
-`Image` will handle the cases when you only need one image (like the floor and the person)
-`Sprite` will handle the more complex case of a list of images with rotations (like the tennis courts)
+`Image` will handle the cases when you only need one image (like the floor and the person) and `Sprite` will handle the more complex case of a list of images with rotations (like the tennis courts).
 
 ```rust
 // image.rs
-// Image doesn't do all that much, just loads
-// an image from a path and keeps it so we can 
-// use it for rendering later.
+// Image doesn't do all that much, just keeps
+// a path to an image.
 #[derive(Debug, Component)]
 #[storage(VecStorage)]
 pub struct Image {
@@ -197,7 +198,7 @@ So we'll have:
 * **person** which has Position, Image and Person
 * **tennis court** which has Position, Sprite and TennisCourt
 
-I created a util file who's sole responsibility is to create these entities. Eventually I can replace this file with a json config to make it easier to change. 
+I created a util file whose sole responsibility is to create these entities. Eventually I can replace this file with a json config to make it easier to change. 
 
 ```rust 
 // world_factory.rs
@@ -254,7 +255,159 @@ impl WorldFactory {
 }
 ```
 
-There's really not all that much to this code, it just combines the components that make sense for each entity. 
+There's really not all that much to this code, it just combines the components that make sense for each entity.
 
 ### Systems
+So far we talked about the data only, so let's start thinking how we'll address behaviours. 
+
+We have 3 main behaviours:
+1. rendering 
+1. court assignment
+1. path finding
+
+#### Rendering
+We can render two types of things basically, either images or sprites. 
+
+```rust
+// This is our rendering system.
+impl<'a> System<'a> for RenderingSystem<'a> {
+
+    // This is the type of data we will use in this system.
+    // It's a good idea to have every system only use the data 
+    // it needs. 
+    type SystemData = (
+        Entities<'a>,
+        ReadStorage<'a, Position>,
+        ReadStorage<'a, Image>,
+        ReadStorage<'a, Sprite>,
+    );
+
+    // This is the run method which gets called on every game
+    // loop iteration.
+    fn run(&mut self, data: Self::SystemData) {
+
+        // This is all the data this system uses.
+        let (entities, position_storage, image_storage, sprite_storage) = data;
+
+        // Grab all entities with a position and an image component
+        let entities_with_image = (&*entities, &position_storage, &image_storage).join();
+        // Draw each
+        for (entity, position, image) in entities_with_image {
+          self.draw_image(position, image);
+        }
+
+        // Grab all entities with a position and a sprite component
+        let entities_with_sprite = (&*entities, &position_storage, &sprite_storage).join();
+        // Draw each
+        for (entity, position, sprite) in entities_with_sprite {
+          self.draw_sprite(position, sprite);
+        }
+    }
+}
+```
+
+Now let's discuss the rendering system in more detail. 
+
+The system has access to a few things:
+- the full list of entities
+- the list of position components
+- the list of image components
+- the list of sprite components
+
+Specs gives a useful `join` method which we can use to get entities with a certain combination of components. For example, this will give us only enitities that have a position component AND an image component.
+
+```rust
+  // Grab all entities with a position and an image component
+  let entities_with_image = 
+    (&*entities, &position_storage, &image_storage).join();
+```
+
+Similarly, we can get all entities which have position and sprite.
+
+```rust
+  // Grab all entities with a position and a sprite component
+  let entities_with_sprite = 
+    (&*entities, &position_storage, &sprite_storage).join();
+```
+
+Once we have these lists all we have to do is iterate through them and simply render each image and each sprite. This is a very basic rendering system that works. In the future this might need to be more complex like: sort entities by depth first, group images and sprite so we can render them more efficiently, etc. 
+
+The key bit here is also that we are not rendering based on entity type, but we are rendering based on components of entities. For example, this code doesn't care that we have floors or courts, it just cares about "entities with images" or "entities with sprites". In a more traditional game architecture we might care about what the entity is, but the beauty of ECS is that you break everything down into the simplest thing and you gave systems working with the minimum amount of information they need. Imagine we add thousands of new entities, this system doesn't need to change one bit. If that is not elegant, I don't know what is! 
+
+#### Court assignment
+
+The other system we care about is how people get assigned to courts. Again for this system we only need to care about: people, courts and positions.
+
+```rust
+// This is the system which matches people with available courts
+impl<'a> System<'a> for CourtChoosingSystem {
+    // Again, the type of data that this system uses.
+    type SystemData = (
+        Entities<'a>,
+        WriteStorage<'a, Person>,
+        WriteStorage<'a, TennisCourt>,
+        WriteStorage<'a, Position>,
+    );
+
+    fn run(&mut self, data: Self::SystemData) {
+        let (entities, mut people, mut tennis_courts, positions) = data;
+
+        // Find available courts
+        let mut available_court_entities = Vec::<Entity>::new();
+        for entity in entities.join() {
+            let tennis_court = tennis_courts.get(entity);
+
+            if tennis_court.is_some() {
+                if tennis_court.unwrap().assigned_people < 2 {
+                    available_court_entities.push(entity);
+                }
+            }
+        }
+
+        // Assign courts to people
+        for entity in entities.join() {
+            let person = people.get_mut(entity);
+
+            if available_court_entities.len() == 0 {
+                return;
+            }
+            
+            match person {
+                Some(p) => {
+                    if p.assigned_court.is_none() && available_court_entities.len() > 0 {
+                        // get the entity, court and position
+                        let available_court_entity = *available_court_entities.get(0).unwrap();
+                        let available_court =
+                            tennis_courts.get_mut(available_court_entity).unwrap();
+                        let mut available_court_position =
+                            positions.get(available_court_entity).unwrap().clone();
+                        // Adding the person to the court
+                        available_court.assigned_people += 1;
+                        // Adding the court to the person
+                        p.assigned_court = Some(available_court_entity);
+                        match available_court.assigned_people {
+                            2 => {
+                                available_court_position.x += TILE_WIDTH * 3.0;
+                                available_court_entities.pop();
+                            }
+                            _ => (),
+                        }
+                        p.assigned_court_position = Some(available_court_position);
+
+                        println!(
+                            "CourtChoosingSystem: assigned court {} to person {}",
+                            available_court_entity.id(),
+                            entity.id(),
+                        );
+                    }
+                }
+                None => (),
+            }
+        }
+    }
+}
+```
+
+
+
 
