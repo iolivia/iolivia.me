@@ -1,5 +1,5 @@
 ---
-title:  "Making a game UI with imgui and ggez"
+title:  "Making a basic game UI with imgui and ggez"
 date:   2019-03-11 00:00:00
 categories: []
 tags: ['game dev', 'rust', 'imgui', 'ggez']
@@ -126,9 +126,9 @@ impl ImGuiWrapper {
 }
 ```
 
-The implementation of this wrapper is essentially a bunch of boilerplate code to connect the ggez context with imgui. There are a few key parts around getting raw context bits, like the render target and factory, but apart from that it should be code you write (or copy) once and then pretty much forget about. You can see the full implementation [here](https://github.com/iolivia/imgui-ggez-starter/blob/master/src/imgui_wrapper.rs) if you's like to go a bit deeper into the details.
+The implementation of this wrapper is essentially a bunch of boilerplate code to connect the ggez context with imgui. There are a few key parts around getting raw context bits, like the render target and factory, but apart from that it should be code you write (or copy) once and then pretty much forget about. You can see the full implementation [here](https://github.com/iolivia/imgui-ggez-starter/blob/master/src/imgui_wrapper.rs) if you'd like to go a bit deeper into the details.
 
-Something that is worth looking at deeper is the render function, since that actually decides what goes on screen.
+Something that is worth looking at closer is the render function, since that actually decides what goes on screen.
 
 ```rust
 pub fn render(&mut self, ctx: &mut Context) {
@@ -282,6 +282,10 @@ pub fn main() {
 ```
 
 ## Wrapping up
-If all went well, we should see something like this on the screen .
+Now that we have imgui integrated into our main, we should see the window we just added drawn on top of our ggez simple circle. 
+
+If we want to get fancy we can add more imgui stuff like popups, a menu bar and some menu items. See it in action below!
 
 ![alt text](./demo.gif "Demo")
+
+PS: You can find all this code at [imgui-ggez-starter](https://github.com/iolivia/imgui-ggez-starter) repo, which should be a pretty good reference point if you want to add imgui to your ggez project. Let me know if you have any problems or you'd like to contribute! 
