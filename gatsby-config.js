@@ -40,7 +40,7 @@ module.exports = {
   </a>
   </p>
   <p>
-    I love technology and I love creating software that lasts. I occasionaly speak at events
+    I love tech and I love creating software that lasts. I occasionaly speak at events
     and run workshops.
   </p>`,
     siteUrl: `http://iolivia.me`
