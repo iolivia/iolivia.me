@@ -75,4 +75,4 @@ Classic good code sort of behaviour, but I feel like this is even more important
 When people think of the game they mostly think of the cool graphics and action, but they ignore the buttons that help you get any gameplay at all. Or even the splashscreen you take for granted. I was quite shocked at the amount of effort that went into my GUI and let's be honest it's far from perfect. So think about that carefully because if you get that wrong no one will figure out how to play your game.
 
 ## Conclusions
-The last 6 months have been awesome, I've learnt a lot, I've made a lot of mistakes and got a few things right, but most of all I learned A LOT and I had A LOT of fun. Who knows what the next 6 months update will hold? 💭
+The last 6 months have been awesome, I've learnt a lot, I've made a lot of mistakes and got a few things right, but most of all I had A LOT of fun. Now to plan for the next 3 months! 👟
