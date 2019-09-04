@@ -72,7 +72,6 @@ export default () => (
                 <FooterItems>
                     {buildSocialLinks(data.site.siteMetadata.socialLinks)}
                 </FooterItems>
-
             </Footer>
         )}
     />

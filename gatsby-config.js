@@ -121,6 +121,14 @@ module.exports = {
       }
     },
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-feed`
+    `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-amazon-onetag`,
+      options: {
+        adInstanceId: "deb44b72-f054-4d8b-9d02-bbb1974d3c32",
+        includeInDevelopment: true,
+        marketplace: "US"
+      }
+    }
   ],
 }
