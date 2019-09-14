@@ -16,33 +16,29 @@ module.exports = {
       disqusShortName: "oliviaifrim",
       disqusEnabled: false
     },
-    description: `<p>
+    description: `
+    <p>
     
-    Hi, I'm Olivia! I'm currently a Senior Software Engineer at
-  <a href="https://daisie.com">
-      Daisie
-  </a>
-    where I am designing and building the next generation of backend services for
-    our upcoming launch. Before this
-    I was helping ship
-  <a href="https://www.primevideo.com/">
-    Amazon Video
-  </a>
- to a bunch of TVs and set-top boxes, and even
-    before that I was building services for
-  <a href="https://docs.microsoft.com/en-us/graph/overview">
-    Office 365 at Microsoft
-  </a>
-  . And even befooooore
-    that I was building games for kids at 
-  <a href="https://www.metacritic.com/game/xbox-360/kinect-sesame-street-tv">
-    Xbox.
-  </a>
-  </p>
-  <p>
+    Hi, I'm Olivia! I'm currently a Senior Software Engineer at <a href="https://twitter.com">Twitter</a>.
+    
+    Before this I worked on a bunch of seemingly random things that have actually given
+    me a great perspective on working on different parts of the stack and helped me
+    become the engineer I am today. Some of those include designing and building a backend 
+    for <a href="https://daisie.com">Daisie</a>, shipping <a href="https://www.primevideo.com/">Amazon Video</a>
+    to a bunch of TVs and set-top boxes, building services for <a href="https://docs.microsoft.com/en-us/graph/overview">
+    Office 365 at Microsoft</a> and building games for kids at <a href="https://www.metacritic.com/game/xbox-360/kinect-sesame-street-tv">Xbox</a>.
+    
+    </p>
+  
+    <p>
+
     I love tech and I love creating software that lasts. I occasionaly speak at events
-    and run workshops.
-  </p>`,
+    and run workshops. The views expressed on this website are entirely my own
+    and not associated with any company past or present.
+
+    </p>
+    
+    `,
     siteUrl: `http://iolivia.me`
   },
   plugins: [
