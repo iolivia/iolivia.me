@@ -18,24 +18,22 @@ module.exports = {
     },
     description: `
     <p>
-    
-    Hi, I'm Olivia! I'm currently a Senior Software Engineer at <a href="https://twitter.com">Twitter</a>.
-    
-    Before this I worked on a bunch of seemingly random things that have actually given
-    me a great perspective on working on different parts of the stack and helped me
-    become the engineer I am today. Some of those include designing and building a backend 
-    for <a href="https://daisie.com">Daisie</a>, shipping <a href="https://www.primevideo.com/">Amazon Video</a>
-    to a bunch of TVs and set-top boxes, building services for <a href="https://docs.microsoft.com/en-us/graph/overview">
-    Office 365 at Microsoft</a> and building games for kids at <a href="https://www.metacritic.com/game/xbox-360/kinect-sesame-street-tv">Xbox</a>.
-    
+    Hi, I'm Olivia! I'm currently a <b>Senior Software Engineer</b> at 
+    <a href="https://twitter.com">Twitter</a> where I work on 
+    media understanding.
     </p>
-  
     <p>
-
-    I love tech and I love creating software that lasts. I occasionaly speak at events
-    and run workshops. The views expressed on this website are entirely my own
-    and not associated with any company past or present.
-
+    Before this I was the tech lead for 
+    <a href="https://en.wikipedia.org/wiki/Maisie_Williams">Maisie Williams</a>'s 
+    creative startup <a href="https://daisie.com">Daisie</a>, working on live streaming
+    for <a href="https://www.primevideo.com/">Amazon Video</a> and even before that
+    building services for <a href="https://docs.microsoft.com/en-us/graph/overview">
+    Office 365 at Microsoft</a> and building games for kids at 
+    <a href="https://www.metacritic.com/game/xbox-360/kinect-sesame-street-tv">Xbox</a>.
+    </p>
+    <p>
+    I love designing and building software and most of all solving problems. These days
+    I write a lot about Rust and game development.
     </p>
     
     `,

@@ -51,6 +51,11 @@ const Copyright = styled.div`
 float: left;
 `
 
+const Views = styled.div`
+float: left;
+font-size: 13px;
+`
+
 export default () => (
     <StaticQuery
         query={graphql`
@@ -65,13 +70,23 @@ export default () => (
         render={data => (
             <Footer>
                 <Copyright>
-                    Made with ❤️ in 2018-2019
+                    Made with ❤️ in 2018-2020
+                    
                 </Copyright>
 
                 {/* Social links */}
                 <FooterItems>
                     {buildSocialLinks(data.site.siteMetadata.socialLinks)}
                 </FooterItems>
+
+                <Views>
+                    <i>
+                        The views expressed on this website are entirely 
+                        my own and not associated with any company past 
+                        or present.
+                    </i>
+                </Views>
+
             </Footer>
         )}
     />
