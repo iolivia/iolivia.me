@@ -70,8 +70,8 @@ export default () => (
         render={data => (
             <Footer>
                 <Copyright>
-                    Made with ❤️ in 2018-2020
-                    
+                    Made with ❤️ in 2018-2024
+
                 </Copyright>
 
                 {/* Social links */}
@@ -81,8 +81,8 @@ export default () => (
 
                 <Views>
                     <i>
-                        The views expressed on this website are entirely 
-                        my own and not associated with any company past 
+                        The views expressed on this website are entirely
+                        my own and not associated with any company past
                         or present.
                     </i>
                 </Views>
