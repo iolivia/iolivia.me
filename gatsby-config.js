@@ -18,12 +18,13 @@ module.exports = {
     },
     description: `
     <p>
-    Hi, I'm Olivia! I'm currently a <b>Senior Software Engineer</b> at 
-    <a href="https://twitter.com">Twitter</a> where I work on 
-    media understanding.
+    Hi, I'm Olivia! I'm currently a <b>Staff Software Engineer</b> at 
+    <a href="https://www.personio.com/">Personio</a> where I work on 
+    building Payroll.
     </p>
     <p>
-    Before this I was the tech lead for 
+    Before this I was fortunate enough to be part of Twitter 1.0 where I 
+    led various Media Infrastructure projects. Before that I was the tech lead for 
     <a href="https://en.wikipedia.org/wiki/Maisie_Williams">Maisie Williams</a>'s 
     creative startup <a href="https://daisie.com">Daisie</a>, working on live streaming
     for <a href="https://www.primevideo.com/">Amazon Video</a> and even before that
@@ -32,10 +33,13 @@ module.exports = {
     <a href="https://www.metacritic.com/game/xbox-360/kinect-sesame-street-tv">Xbox</a>.
     </p>
     <p>
-    I love designing and building software and most of all solving problems. These days
-    I write a lot about Rust and game development.
+    I love designing and building software and most of all solving problems. 
+    I used to write a lot about Rust and game development, and I was featured on
+    multiple Rust gamedev <a href="https://gamedev.rs/news/">newsletters</a>. 
     </p>
-    
+    <p>
+    I am also the author of the <a href="https://sokoban.iolivia.me/">Rust Sokoban book</a>.
+    </p>
     `,
     siteUrl: `http://iolivia.me`
   },
