@@ -57,8 +57,9 @@ export const indexPageQuery = graphql`
             title
             featuredImage {
               childImageSharp {
-                fixed(width: 230, height: 230) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxHeight: 230, maxWidth: 230, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluidLimitPresentationSize
                 }
               }
             }
@@ -130,7 +131,7 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
       postElements.push((
         <PostPreview
-          imageSizes={post.frontmatter.featuredImage.childImageSharp.fixed}
+          imageSizes={post.frontmatter.featuredImage.childImageSharp.fluid}
           title={post.frontmatter.title}
           excerpt={post.excerpt}
           url={post.fields.slug}

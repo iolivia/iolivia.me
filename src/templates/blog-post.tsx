@@ -83,7 +83,7 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
 
           <Center>
 
-            <Img sizes={featuredImage.sizes} />
+            <Img fluid={featuredImage.fluid} />
 
             <Title>{post.frontmatter.title}</Title>
 
@@ -143,10 +143,11 @@ export const pageQuery = graphql`
         tags
         featuredImage {
           childImageSharp{
-            fixed(width: 700, height: 300) {
+            fluid(maxWidth: 700, quality: 100) {
               src
               srcSet
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }

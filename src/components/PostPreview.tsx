@@ -46,7 +46,7 @@ export default class PostPreview extends React.Component<PostPreviewProps, {}> {
         return (
             <Card>
                 <Thumbnail>
-                    <Img sizes={imageSizes} alt={title} title={title} />
+                    <Img fluid={imageSizes} alt={title} title={title} />
                 </Thumbnail>
                 <a href={url}>
                     <Title>{title}</Title>
