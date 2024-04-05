@@ -115,7 +115,6 @@ module.exports = {
       }
     },
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-amazon-onetag`,
       options: {
