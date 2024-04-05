@@ -40,12 +40,12 @@ export const indexPageQuery = graphql`
   query IndexPageQuery {
     site {
       siteMetadata {
-          title
-          description
-          siteUrl
+        title
+        description
+        siteUrl
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
       edges {
         node {
           excerpt
@@ -56,9 +56,9 @@ export const indexPageQuery = graphql`
             date(formatString: "DD MMMM, YYYY")
             title
             featuredImage {
-              childImageSharp{
-                sizes(maxWidth: 230, maxHeight: 230) {
-                  ...GatsbyImageSharpSizes
+              childImageSharp {
+                fixed(width: 230, height: 230) {
+                  ...GatsbyImageSharpFixed
                 }
               }
             }
@@ -110,10 +110,10 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
         <Section id="contact" heading="Contact">
 
           If you'd like to reach out, please do so at&nbsp;
-        <strong>
+          <strong>
             <a href="mailto:olivia_github@outlook.com">
               olivia_github@outlook.com
-          </a>
+            </a>
           </strong>
           .
         </Section>
@@ -130,7 +130,7 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
       postElements.push((
         <PostPreview
-          imageSizes={post.frontmatter.featuredImage.childImageSharp.sizes}
+          imageSizes={post.frontmatter.featuredImage.childImageSharp.fixed}
           title={post.frontmatter.title}
           excerpt={post.excerpt}
           url={post.fields.slug}
