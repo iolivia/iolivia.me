@@ -1,19 +1,11 @@
-# gatsby-starter-hello-world
+# iolivia.me
 
-Starter with the bare essentials needed for a [Gatsby](https://www.gatsbyjs.org/) site.
-
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-
-```
-gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world
-```
-
-Or [view the live demo here](https://gatsby-starter-hello-world-demo.netlify.com/).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6ad13c7f-bb67-4fb8-a4ec-5b9c0b78bdd6/deploy-status)](https://app.netlify.com/sites/iolivia/deploys)
 
 ## Build
 
-`export SET NODE_OPTIONS=--openssl-legacy-provider && gatsby build`
+`gatsby build`
 
 ## Run locally
 
-`export SET NODE_OPTIONS=--openssl-legacy-provider && gatsby develop`
+`gatsby develop`
