@@ -60,12 +60,8 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
     const post = this.props.data.markdownRemark;
 
     const siteMetadata = this.props.data.site.siteMetadata;
-
-    const disqusShortname = siteMetadata.settings.disqusShortName;
-    const disqusConfig = {
-      identifier: post.id,
-      title: post.frontmatter.title,
-    };
+    const socialLinks = new Map(siteMetadata.socialLinks);
+    const blueskyHandle = socialLinks.get("bluesky");
 
     const featuredImage = post.frontmatter.featuredImage.childImageSharp;
 
@@ -76,7 +72,7 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
           title={post.frontmatter.title || siteMetadata.title}
           description={post.excerpt || siteMetadata.description}
           siteUrl={siteMetadata.siteUrl}
-          twitterHandle={siteMetadata.twitterHandle}
+          twitterHandle=""
         />
 
         <PostContent>
@@ -103,14 +99,10 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
           {
-            siteMetadata.settings.disqusEnabled
-              ? <DiscussionEmbed
-                shortname={disqusShortname}
-                config={disqusConfig} />
-              : <div>
-                <hr />
-                <p><a href={`https://twitter.com/${siteMetadata.twitterHandle}`}>Tweet</a> about this post.</p>
-              </div>
+            <div>
+              <hr />
+              <p><a href={blueskyHandle}>Share</a> something about this post.</p>
+            </div>
           }
 
         </PostContent>
@@ -130,7 +122,7 @@ export const pageQuery = graphql`
           disqusShortName
           disqusEnabled
         }
-        twitterHandle
+        socialLinks
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
