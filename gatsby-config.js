@@ -18,7 +18,7 @@ module.exports = {
     },
     description: `
     <p>
-    Hi, I'm Olivia! I'm currently a <b>Staff Software Engineer</b> at 
+    Hi, I'm Olivia! I'm currently a <b>Senior Staff Software Engineer</b> at 
     <a href="https://www.personio.com/">Personio</a> where I work on 
     building Payroll.
     </p>
