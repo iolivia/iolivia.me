@@ -6,6 +6,7 @@ module.exports = {
     email: `olivia_github@outlook.com`,
     twitterHandle: "@oliviff",
     socialLinks: [
+      ["bluesky", "https://bsky.app/profile/oliviff.bsky.social"],
       ["twitter", "https://twitter.com/oliviff"],
       ["linkedin", "https://www.linkedin.com/in/oliviaifrim/"],
       ["github", "https://github.com/iolivia"],
